@@ -2,12 +2,11 @@
   "name": "Strapi",
   "description": "Strapi Heroku deployment",
   "keywords": ["strapi", "heroku"],
-  "repository": "https://github.com/strapi/strapi-starter-next-blog",
   "env": {
     "PROJECT_PATH": {
       "description": "Backend project path",
       "required": true,
-      "value": "backend"
+      "value": "back"
     },
     "CLOUDINARY_CLOUD_NAME": {
       "description": "The 'Cloud name' of your Cloudinary account",
