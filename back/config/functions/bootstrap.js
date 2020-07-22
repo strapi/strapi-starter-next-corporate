@@ -20,8 +20,11 @@ async function hasAdminUsers() {
 }
 
 async function importSeedData() {
-  await exec('apt-get install pgloader');
-  await exec(`pgloader ./data.db ${process.env.DATABASE_URL}`);
+  const {
+    stdout,
+    stderr
+  } = await exec(`pgloader ./data.db ${process.env.DATABASE_URL}`);
+  console.log({ stdout, stderr })
 }
 
 module.exports = async () => {
