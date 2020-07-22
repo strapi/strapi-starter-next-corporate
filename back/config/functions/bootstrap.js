@@ -1,5 +1,7 @@
 'use strict';
 
+const fse = require('fs-extra');
+
 /**
  * An asynchronous bootstrap function that runs before
  * your application gets started.
@@ -16,8 +18,18 @@ async function hasAdminUsers() {
   return admins.length > 0;
 }
 
+async function importSeedData() {
+  // Extract SQL query string from SQL file
+  const sqlDump = fse.readFileSync('./dump.sql').toString();
+  // Execute query
+  await strapi.connections.default.raw(sqlDump)
+}
+
 module.exports = async () => {
-  const shouldImportData = await hasAdminUsers();
+  // Check if first run
+  const shouldImportData = !await hasAdminUsers();
   console.log({ shouldImportData });
-  console.log(typeof strapi.connections.default);
+  if (shouldImportData) {
+    await importSeedData();
+  }
 };
