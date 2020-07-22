@@ -1,4 +1,3 @@
-PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
 CREATE TABLE `core_store` (`id` integer not null primary key autoincrement, `key` varchar(255) null, `value` text null, `type` varchar(255) null, `environment` varchar(255) null, `tag` varchar(255) null);
 INSERT INTO core_store VALUES(1,'db_model_core_store','{"key":{"type":"string"},"value":{"type":"text"},"type":{"type":"string"},"environment":{"type":"string"},"tag":{"type":"string"}}','object',NULL,NULL);
