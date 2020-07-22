@@ -10,4 +10,14 @@
  * See more details here: https://strapi.io/documentation/v3.x/concepts/configurations.html#bootstrap
  */
 
-module.exports = () => {};
+
+async function hasAdminUsers() {
+  const admins = await strapi.query('administrator', 'admin').find()
+  return admins.length > 0;
+}
+
+module.exports = async () => {
+  const shouldImportData = await hasAdminUsers();
+  console.log({ shouldImportData });
+  console.log(typeof strapi.connections.default);
+};
