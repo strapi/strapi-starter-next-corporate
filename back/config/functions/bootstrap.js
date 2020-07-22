@@ -1,6 +1,8 @@
 'use strict';
 
 const fse = require('fs-extra');
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
 
 /**
  * An asynchronous bootstrap function that runs before
@@ -12,17 +14,14 @@ const fse = require('fs-extra');
  * See more details here: https://strapi.io/documentation/v3.x/concepts/configurations.html#bootstrap
  */
 
-
 async function hasAdminUsers() {
   const admins = await strapi.query('administrator', 'admin').find()
   return admins.length > 0;
 }
 
 async function importSeedData() {
-  // Extract SQL query string from SQL file
-  const sqlDump = fse.readFileSync('./dump.sql').toString();
-  // Execute query
-  await strapi.connections.default.raw(sqlDump)
+  await exec('apt-get install pgloader');
+  await exec(`pgloader ./data.db ${process.env.DATABASE_URL}`);
 }
 
 module.exports = async () => {
