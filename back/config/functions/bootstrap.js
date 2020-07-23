@@ -21,11 +21,9 @@ async function hasAdminUsers() {
 }
 
 async function importSeedData() {
-  const dbConfig = parseDbUrl(process.env.DATABASE_URL);
-  const response = await exec(
-    `sh seed.sh ${dbConfig.host} ${dbConfig.port} ${dbConfig.database} ${dbConfig.user}`
-  );
-  console.log(response);
+  // const dbConfig = parseDbUrl(process.env.DATABASE_URL);
+  const sql = fse.readFileSync('.dump.sql').toString();
+  await strapi.connections.default.raw();
 }
 
 module.exports = async () => {
