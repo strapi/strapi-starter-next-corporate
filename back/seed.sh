@@ -8,9 +8,9 @@ SQLITE_DB_PATH=$1
 PG_DB_NAME=$2
 PG_USER_NAME=$3
 
-SQLITE_DUMP_FILE="sqlite_data.sql"
+SQLITE_DUMP_FILE="dump.sql"
 
-sqlite3 $SQLITE_DB_PATH .dump > $SQLITE_DUMP_FILE
+# sqlite3 $SQLITE_DB_PATH .dump > $SQLITE_DUMP_FILE
 
 # PRAGMAs are specific to SQLite3.
 sed -i '/PRAGMA/d' $SQLITE_DUMP_FILE
