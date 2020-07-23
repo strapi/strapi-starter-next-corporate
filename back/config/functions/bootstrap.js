@@ -22,8 +22,9 @@ async function hasAdminUsers() {
 
 async function importSeedData() {
   // const dbConfig = parseDbUrl(process.env.DATABASE_URL);
-  const sql = fse.readFileSync('./dump.sql').toString();
-  await strapi.connections.default.raw();
+  // const sql = fse.readFileSync('./dump.sql').toString();
+  // console.log(sql)
+  // await strapi.connections.default.raw(sql);
 }
 
 module.exports = async () => {
