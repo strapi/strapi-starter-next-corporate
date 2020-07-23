@@ -3,6 +3,7 @@
 const fse = require('fs-extra');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
+const parseDbUrl = require("parse-database-url");
 
 /**
  * An asynchronous bootstrap function that runs before
@@ -20,11 +21,11 @@ async function hasAdminUsers() {
 }
 
 async function importSeedData() {
-  const {
-    stdout,
-    stderr
-  } = await exec(`pgloader ./data.db ${process.env.DATABASE_URL}`);
-  console.log({ stdout, stderr })
+  const dbConfig = parseDbUrl(process.env.DATABASE_URL);
+  const response = await exec(
+    `sh seed.sh ./data.db ${dbConfig.database} ${dbConfig.user}`
+  );
+  console.log(response);
 }
 
 module.exports = async () => {
