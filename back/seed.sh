@@ -21,12 +21,12 @@ sed -i '/sqlite_sequence/d ; s/integer PRIMARY KEY AUTOINCREMENT/serial PRIMARY 
 sed -i 's/datetime/timestamp/g ; s/integer[(][^)]*[)]/integer/g ; s/text[(]\([^)]*\)[)]/varchar(\1)/g' $SQLITE_DUMP_FILE
 
 # createdb -U $PG_USER_NAME $PG_DB_NAME
-psql -h $DB_HOST -p $DB_PORT $PG_DB_NAME $PG_USER_NAME < $SQLITE_DUMP_FILE
+psql --set=sslmode=require -h $DB_HOST -p $DB_PORT $PG_DB_NAME $PG_USER_NAME < $SQLITE_DUMP_FILE
 
 # Update Postgres sequences.
-psql -h $DB_HOST -p $DB_PORT $PG_DB_NAME $PG_USER_NAME -c "\ds" | grep sequence | cut -d'|' -f2 | tr -d '[:blank:]' |
+psql --set=sslmode=require -h $DB_HOST -p $DB_PORT $PG_DB_NAME $PG_USER_NAME -c "\ds" | grep sequence | cut -d'|' -f2 | tr -d '[:blank:]' |
 while read sequence_name; do
   table_name=${sequence_name%_id_seq}
 
-  psql -h $DB_HOST -p $DB_PORT $PG_DB_NAME $PG_USER_NAME -c "select setval('$sequence_name', (select max(id) from $table_name))"
+  psql --set=sslmode=require -h $DB_HOST -p $DB_PORT $PG_DB_NAME $PG_USER_NAME -c "select setval('$sequence_name', (select max(id) from $table_name))"
 done
