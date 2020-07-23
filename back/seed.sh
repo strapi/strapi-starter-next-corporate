@@ -19,7 +19,7 @@ sed -i '/sqlite_sequence/d ; s/integer PRIMARY KEY AUTOINCREMENT/serial PRIMARY 
 # Convert column types.
 sed -i 's/datetime/timestamp/g ; s/integer[(][^)]*[)]/integer/g ; s/text[(]\([^)]*\)[)]/varchar(\1)/g' $SQLITE_DUMP_FILE
 
-createdb -U $PG_USER_NAME $PG_DB_NAME
+# createdb -U $PG_USER_NAME $PG_DB_NAME
 psql $PG_DB_NAME $PG_USER_NAME < $SQLITE_DUMP_FILE
 
 # Update Postgres sequences.
