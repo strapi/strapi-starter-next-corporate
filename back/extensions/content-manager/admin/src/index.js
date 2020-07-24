@@ -9,7 +9,6 @@ import pluginPkg from '../../package.json';
 import pluginId from './pluginId';
 import pluginLogo from './assets/images/logo.svg';
 import App from './containers/Main';
-import Initializer from './containers/Initializer';
 import lifecycles from './lifecycles';
 import reducers from './reducers';
 import trads from './translations';
@@ -23,7 +22,7 @@ export default strapi => {
     description: pluginDescription,
     icon: pluginPkg.strapi.icon,
     id: pluginId,
-    initializer: Initializer,
+    initializer: null,
     injectedComponents: [
       {
         plugin: "content-manager.editView",
