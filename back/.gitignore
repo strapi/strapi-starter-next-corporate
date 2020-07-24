@@ -128,5 +128,3 @@ build
 # Custom
 
 .vscode/*
-
-!dump.sql

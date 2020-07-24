@@ -12,7 +12,6 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "fs-extra": "^9.0.1",
     "knex": "<0.20.0",
     "parse-database-url": "^0.3.0",
     "pg": "^8.3.0",

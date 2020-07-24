@@ -1,10 +1,5 @@
 'use strict';
 
-const fse = require('fs-extra');
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
-const parseDbUrl = require("parse-database-url");
-
 /**
  * An asynchronous bootstrap function that runs before
  * your application gets started.
@@ -20,12 +15,7 @@ async function hasAdminUsers() {
   return admins.length > 0;
 }
 
-async function importSeedData() {
-  // const dbConfig = parseDbUrl(process.env.DATABASE_URL);
-  // const sql = fse.readFileSync('./dump.sql').toString();
-  // console.log(sql)
-  // await strapi.connections.default.raw(sql);
-}
+async function importSeedData() {}
 
 module.exports = async () => {
   // Check if first run
