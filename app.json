@@ -19,6 +19,18 @@
     "CLOUDINARY_API_SECRET": {
       "description": "The 'API Secret' of your Cloudinary account",
       "required": true
+    },
+    "ADMIN_JWT_SECRET": {
+      "description": "Insert a random token for security reasons",
+      "required": true
+    },
+    "FRONTEND_URL": {
+      "description": "The frontend URL of your website",
+      "required": false
+    },
+    "FRONTEND_PREVIEW_SECRET": {
+      "description": "The secret token of your Next site for preview mode",
+      "required": false
     }
   },
   "addons": ["heroku-postgresql:hobby-dev"],
