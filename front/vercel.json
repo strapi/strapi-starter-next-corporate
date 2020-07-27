@@ -1,6 +1,0 @@
-{
-  "env": {
-    "NEXT_PUBLIC_STRAPI_API_URL": "the url of your Strapi backend",
-    "PREVIEW_SECRET": "a random secret key"
-  }
-}
