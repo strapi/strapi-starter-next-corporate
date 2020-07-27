@@ -1,6 +1,10 @@
 # Strapi Starter Next Corporate Site
 
-This starter is the recommended way to build a corporate site. It features:
+Gatsby starter for creating a blog with Strapi.
+
+This starter is designed for flexibility. Using it, you'll be able to manage your website content entirely in Strapi, and get a Next app automatically generated. Marketing teams will be able to create pages and design their layout without help from developers.
+
+![screen-website](medias/screen-website.png)
 
 - Pages creation within Strapi, no code necessary
 - Fully flexible page structure: design the pages you want using UI Sections
@@ -42,8 +46,7 @@ Finally, let's setup a database. In the Resources tab, search for the "Heroku Po
 We'll now need the Heroku CLI, so [install it](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) if you don't have it already. Then run `heroku login` to make sure you are authenticated. To import the dummy content we have prepared, run this command:
 
 ```sh
-heroku pg:backups:restore '<https://res.cloudinary.com/next-corporate-site/raw/upload/v1595595596/postgres_dumps/strapi_starter_next_corporate_site_2_ajhvrw.dump>' DATABASE_URL -a my-heroku-app
-
+heroku pg:backups:restore 'https://res.cloudinary.com/next-corporate-site/raw/upload/v1595595596/postgres_dumps/strapi_starter_next_corporate_site_2_ajhvrw.dump' DATABASE_URL -a my-heroku-app
 ```
 
 Remember to replace my-heroku-app by the name of your app on Heroku, but leave the rest unchanged. We have now imported a Postgres backup.
@@ -77,6 +80,56 @@ There's still one more thing necessary to enable the preview mode. Go back to yo
 - `PREVIEW_SECRET`: the secret key you entered in Vercel earlier
 
 ## Customize your corporate site
+
+To edit this website, you'll need to run both the frontend and the backend in your development environment.
+
+### Run the backend locally
+
+Open a terminal window and cd into the Strapi directory
+
+```sh
+cd back
+```
+
+Copy the .env.example file in this directory to a .env file (which will be ignored by Git):
+
+```sh
+cp .env.example .env
+```
+
+Out of the box, this starter is made to connect to a Postgres database in production. You'll need to set up a [local database connection](https://strapi.io/documentation/3.0.0-beta.x/concepts/configurations.html#database) to run it in development.
+
+Once you're done, you can start running Strapi:
+
+```sh
+yarn develop
+```
+
+### Run the frontend locally
+
+While the Strapi server is running, open a new terminal and cd into the Next.js  app directory.
+
+```sh
+cd front
+```
+
+Copy the .env.local.example file in this directory to .env.local (which will be ignored by Git):
+
+```sh
+cp .env.local.example .env.local
+```
+
+Then set each variable on `.env.local`:
+
+- `STRAPI_PREVIEW_SECRET` can be any random string (but avoid spaces), like `MY_SECRET` - this is used for [Preview Mode](https://nextjs.org/docs/advanced-features/preview-mode).
+- `NEXT_PUBLIC_STRAPI_API_URL` should be set as `http://localhost:1337` (no trailing slash).
+
+Finally, run Next in development mode.
+
+```sh
+yarn install
+yarn dev
+```
 
 ### Adding Sections
 
