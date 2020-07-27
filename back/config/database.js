@@ -3,6 +3,7 @@ const parseDbUrl = require("parse-database-url");
 module.exports = ({ env }) => {
   // Parse database string into several parts
   const dbConfig = parseDbUrl(env("DATABASE_URL"));
+  console.log('log', dbConfig)
 
   return {
     defaultConnection: "default",
