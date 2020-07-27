@@ -77,7 +77,7 @@ Then click on Deploy and wait for the app to build. Your site should now be live
 There's still one more thing necessary to enable the preview mode. Go back to your Config Vars on Heroku, and add these:
 
 - `FRONTEND_URL`: the URL of your Next frontend (without the trailing slash)
-- `PREVIEW_SECRET`: the secret key you entered in Vercel earlier
+- `FRONTEND_PREVIEW_SECRET`: the secret key you entered in Vercel earlier
 
 ## Customize your corporate site
 
