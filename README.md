@@ -81,6 +81,18 @@ There's still one more thing necessary to enable the preview mode. Go back to yo
 - `FRONTEND_URL`: the URL of your Next frontend (without the trailing slash)
 - `FRONTEND_PREVIEW_SECRET`: the secret key you entered in Vercel earlier
 
+### Automatic builds with webhooks
+
+We're using Next's static generation for our frontend. This means we need to trigger new builds when the content changes in Strapi. We'll use webhooks to do this automatically.
+
+We first need to create a Deploy Hook in Vercel. In your project's settings, go to the end of the Git Integration tab. Name your hook however you want, but make sure you link it to your master branch.
+
+![screen-vercel-webhook](medias/screen-vercel-webhook.png)
+
+Then copy the generated URL and open your Strapi admin in production. In the settings tab, open Webhooks and paste the hook URL. Make sure you check all events to trigger build after every change.
+
+Now everytime we make a change in Strapi, Vercel creates a new build!
+
 ## Customize your corporate site
 
 To edit this website, you'll need to run both the frontend and the backend in your development environment.
