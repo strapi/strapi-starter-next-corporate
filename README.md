@@ -6,6 +6,8 @@ This starter is designed for flexibility. Using it, you'll be able to manage you
 
 ![screen-website](medias/screen-website.png)
 
+This starter features:
+
 - Pages creation within Strapi, no code necessary
 - Fully flexible page structure: design the pages you want using UI Sections
 - 8 UI Sections out of the box: Hero, RichText, LargeVideo, Testimonials, Pricing, BottomActions, FeatureRows, FeatureColumns
@@ -46,7 +48,7 @@ Finally, let's setup a database. In the Resources tab, search for the "Heroku Po
 We'll now need the Heroku CLI, so [install it](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) if you don't have it already. Then run `heroku login` to make sure you are authenticated. To import the dummy content we have prepared, run this command:
 
 ```sh
-heroku pg:backups:restore 'https://res.cloudinary.com/next-corporate-site/raw/upload/v1595595596/postgres_dumps/strapi_starter_next_corporate_site_2_ajhvrw.dump' DATABASE_URL -a my-heroku-app
+heroku pg:backups:restore 'http://cdn.jsdelivr.net/gh/strapi/strapi-starter-next-corporate/data.dump' DATABASE_URL -a my-heroku-app
 ```
 
 Remember to replace my-heroku-app by the name of your app on Heroku, but leave the rest unchanged. We have now imported a Postgres backup.
@@ -97,13 +99,15 @@ Copy the .env.example file in this directory to a .env file (which will be ignor
 cp .env.example .env
 ```
 
-Out of the box, this starter is made to connect to a Postgres database in production. You'll need to set up a [local database connection](https://strapi.io/documentation/3.0.0-beta.x/concepts/configurations.html#database) to run it in development.
+Out of the box, this starter is made to connect to a Postgres database via using a Postgres URI. You'll need to set up a [local database connection](https://strapi.io/documentation/3.0.0-beta.x/concepts/configurations.html#database) to run another config in development.
 
 Once you're done, you can start running Strapi:
 
 ```sh
 yarn develop
 ```
+
+You can view full backend documentation on the [back directory Readme](/back/README.md).
 
 ### Run the frontend locally
 
@@ -130,6 +134,8 @@ Finally, run Next in development mode.
 yarn install
 yarn dev
 ```
+
+You can view full frontend documentation on the [front directory Readme](/front/README.md).
 
 ### Adding Sections
 
