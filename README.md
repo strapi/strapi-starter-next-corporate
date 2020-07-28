@@ -91,6 +91,8 @@ We first need to create a Deploy Hook in Vercel. In your project's settings, go 
 
 Then copy the generated URL and open your Strapi admin in production. In the settings tab, open Webhooks and paste the hook URL. Make sure you check all events to trigger build after every change.
 
+![screen-strapi-webhook](medias/screen-strapi-webhook.png)
+
 Now everytime we make a change in Strapi, Vercel creates a new build!
 
 ## Customize your corporate site
