@@ -1,10 +1,10 @@
 # Strapi Starter Next Corporate Site
 
-Gatsby starter for creating a blog with Strapi.
-
-This starter is designed for flexibility. Using it, you'll be able to manage your website content entirely in Strapi, and get a Next app automatically generated. Marketing teams will be able to create pages and design their layout without help from developers.
+Next starter for creating a corporate site with Strapi.
 
 ![screen-website](medias/screen-website.png)
+
+This starter is designed for flexibility. Using it, you'll be able to manage your website content entirely in Strapi, and get a Next app automatically generated. Marketing teams will be able to create pages and design their layout without help from developers.
 
 This starter features:
 
