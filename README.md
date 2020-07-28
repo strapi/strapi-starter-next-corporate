@@ -48,7 +48,7 @@ Finally, let's setup a database. In the Resources tab, search for the "Heroku Po
 We'll now need the Heroku CLI, so [install it](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) if you don't have it already. Then run `heroku login` to make sure you are authenticated. To import the dummy content we have prepared, run this command:
 
 ```sh
-heroku pg:backups:restore 'http://cdn.jsdelivr.net/gh/strapi/strapi-starter-next-corporate/data.dump' DATABASE_URL -a my-heroku-app
+heroku pg:backups:restore 'https://cdn.jsdelivr.net/gh/strapi/strapi-starter-next-corporate@latest/data.dump' DATABASE_URL -a my-heroku-app
 ```
 
 Remember to replace my-heroku-app by the name of your app on Heroku, but leave the rest unchanged. We have now imported a Postgres backup.
