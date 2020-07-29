@@ -8,10 +8,12 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "heroku-postbuild": "strapi build && node scripts/postinstall.js"
   },
   "devDependencies": {},
   "dependencies": {
+    "fs-extra": "^9.0.1",
     "knex": "<0.20.0",
     "parse-database-url": "^0.3.0",
     "pg": "^8.3.0",
@@ -25,14 +27,13 @@
     "strapi-plugin-upload": "3.1.1",
     "strapi-plugin-users-permissions": "3.1.1",
     "strapi-provider-upload-cloudinary": "3.1.1",
-    "strapi-utils": "3.1.1",
-    "unzip-stream": "^0.3.0"
+    "strapi-utils": "3.1.1"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "049871a5-a046-48e1-8382-00c45ffa4f83"
+    "uuid": "STRAPI-STARTER-NEXT-CORPORATE"
   },
   "engines": {
     "node": ">=10.0.0",
