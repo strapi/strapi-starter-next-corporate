@@ -113,9 +113,9 @@ Copy the .env.example file in this directory to a .env file (which will be ignor
 cp .env.example .env
 ```
 
-Out of the box, this starter is made to connect to a Postgres database via using a Postgres URI. You'll need to set up a [local database connection](https://strapi.io/documentation/3.0.0-beta.x/concepts/configurations.html#database) to run another config in development.
+Out of the box, this starter connects to a Postgres database in production, and to an SQLite file in development. Feel free to [change these configurations](https://strapi.io/documentation/3.0.0-beta.x/concepts/configurations.html#database) if you need.
 
-Once you're done, you can start running Strapi:
+Start running Strapi:
 
 ```sh
 yarn develop
