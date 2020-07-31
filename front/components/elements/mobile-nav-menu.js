@@ -9,6 +9,7 @@ import {
 import ButtonLink from "./button-link";
 import { useLockBodyScroll } from "utils/hooks";
 import { getButtonAppearance } from "utils/button";
+import CustomLink from "./custom-link";
 
 const MobileNavMenu = ({ navbar, closeSelf }) => {
   // Prevent window scroll while mobile nav menu is open
@@ -31,13 +32,12 @@ const MobileNavMenu = ({ navbar, closeSelf }) => {
           <ul className="flex flex-col list-none gap-6 items-baseline text-xl mb-10">
             {navbar.links.map((navLink) => (
               <li key={navLink.id} className="block w-full">
-                <a
-                  href={navLink.url}
-                  className="hover:text-gray-900 py-6 flex flex-row justify-between items-center"
-                >
-                  <span>{navLink.text}</span>
-                  <MdChevronRight className="h-8 w-auto" />
-                </a>
+                <CustomLink link={navLink}>
+                  <div className="hover:text-gray-900 py-6 flex flex-row justify-between items-center">
+                    <span>{navLink.text}</span>
+                    <MdChevronRight className="h-8 w-auto" />
+                  </div>
+                </CustomLink>
               </li>
             ))}
           </ul>

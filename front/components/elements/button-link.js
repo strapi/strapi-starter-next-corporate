@@ -1,11 +1,12 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import { buttonLinkPropTypes } from "utils/types";
+import Link from "next/link";
+import CustomLink from "./custom-link";
 
-const ButtonLink = ({ button, appearance, compact = false }) => {
+const ButtonContent = ({ button, appearance, compact }) => {
   return (
-    <a
-      href={button.url}
+    <div
       className={classNames(
         // Common classes
         "block w-full lg:w-auto text-center uppercase tracking-wide font-semibold text-base md:text-sm border-2 rounded-md",
@@ -34,12 +35,17 @@ const ButtonLink = ({ button, appearance, compact = false }) => {
           "text-white border-white": appearance === "white-outline",
         }
       )}
-      // Change target and rel attributes is newTab is turned on
-      target={button.newTab ? "_blank" : "_self"}
-      rel={button.newTab ? "noopener noreferrer" : ""}
     >
       {button.text}
-    </a>
+    </div>
+  );
+};
+
+const ButtonLink = ({ button, appearance, compact = false }) => {
+  return (
+    <CustomLink link={button}>
+      <ButtonContent button={button} appearance={appearance} compact={compact} />
+    </CustomLink>
   );
 };
 

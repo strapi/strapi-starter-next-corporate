@@ -1,6 +1,7 @@
 import Image from "./image";
 import PropTypes from "prop-types";
 import { linkPropTypes, mediaPropTypes } from "utils/types";
+import CustomLink from "./custom-link";
 
 const Footer = ({ footer }) => {
   return (
@@ -22,16 +23,10 @@ const Footer = ({ footer }) => {
               </p>
               <ul className="mt-2">
                 {footerColumn.links.map((link) => (
-                  <li key={link.id} className="text-gray-700 py-1 px-1 -mx-1">
-                    <a
-                      href={link.url}
-                      className="hover:text-gray-900"
-                      // Change target and rel attributes is newTab is turned on
-                      target={link.newTab ? "_blank" : "_self"}
-                      rel={link.newTab ? "noopener noreferrer" : ""}
-                    >
+                  <li key={link.id} className="text-gray-700 py-1 px-1 -mx-1 hover:text-gray-900">
+                    <CustomLink link={link}>
                       {link.text}
-                    </a>
+                    </CustomLink>
                   </li>
                 ))}
               </ul>

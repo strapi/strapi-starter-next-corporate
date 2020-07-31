@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { useState } from "react";
 import Image from "../elements/image";
+import CustomLink from "../elements/custom-link";
 
 const TestimonialsGroup = ({ data }) => {
   // Only show one testimonial at a time
@@ -11,12 +12,11 @@ const TestimonialsGroup = ({ data }) => {
     <section className="text-center text-lg bg-gray-200 pt-12 pb-16">
       <h2 className="title mb-4">{data.title}</h2>
       <p className="text-gray-700 mb-4">{data.description}</p>
-      <a
-        href={data.link.url}
-        className="with-arrow text-blue-700 hover:underline"
-      >
-        {data.link.text}
-      </a>
+      <CustomLink link={data.link}>
+        <span className="with-arrow text-blue-700 hover:underline">
+          {data.link.text}
+        </span>
+      </CustomLink>
       {/* Current testimonial card */}
       <div className="max-w-5xl w-8/12 sm:w-8/12 bg-white shadow-md sm:shadow-xl mx-auto flex flex-col sm:flex-row mt-10 text-left">
         <Image
@@ -37,12 +37,11 @@ const TestimonialsGroup = ({ data }) => {
               {selectedTestimonial.authorTitle}
             </p>
           </div>
-          <a
-            href={selectedTestimonial.link}
-            className="uppercase tracking-wide text-blue-700 hover:underline  with-arrow sm:self-end mt-6 sm:mt-0"
-          >
-            Read story
-          </a>
+          <CustomLink link={{ url: selectedTestimonial.link, newTab: false, id: 0 }}>
+            <span className="uppercase tracking-wide text-blue-700 hover:underline  with-arrow sm:self-end mt-6 sm:mt-0">
+              Read story
+            </span>
+          </CustomLink>
         </div>
       </div>
       {/* Change selected testimonial (only if there is more than one) */}

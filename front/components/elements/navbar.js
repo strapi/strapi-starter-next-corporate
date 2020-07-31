@@ -11,6 +11,7 @@ import {
   buttonLinkPropTypes,
 } from "utils/types";
 import { getButtonAppearance } from "utils/button";
+import CustomLink from "./custom-link";
 
 const Navbar = ({ navbar }) => {
   const [mobileMenuIsShown, setMobileMenuIsShown] = useState(false);
@@ -34,12 +35,11 @@ const Navbar = ({ navbar }) => {
             <ul className="hidden list-none md:flex flex-row gap-4 items-baseline ml-10">
               {navbar.links.map((navLink) => (
                 <li key={navLink.id}>
-                  <a
-                    href={navLink.url}
-                    className="hover:text-gray-900 px-2 py-1"
-                  >
-                    {navLink.text}
-                  </a>
+                  <CustomLink link={navLink}>
+                    <div className="hover:text-gray-900 px-2 py-1">
+                      {navLink.text}
+                    </div>
+                  </CustomLink>
                 </li>
               ))}
             </ul>

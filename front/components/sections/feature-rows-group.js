@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import Image from "../elements/image";
 import Video from "../elements/video";
+import CustomLink from "../elements/custom-link";
 
 const FeatureRowsGroup = ({ data }) => {
   return (
@@ -21,12 +22,11 @@ const FeatureRowsGroup = ({ data }) => {
           <div className="w-full lg:w-6/12 lg:pr-6 text-lg">
             <h3 className="title">{feature.title}</h3>
             <p className="my-6">{feature.description}</p>
-            <a
-              className="text-blue-600 with-arrow hover:underline"
-              href={feature.link.url}
-            >
-              {feature.link.text}
-            </a>
+            <CustomLink link={feature.link}>
+              <div className="text-blue-600 with-arrow hover:underline">
+                {feature.link.text}
+              </div>
+            </CustomLink>
           </div>
           {/* Media section */}
           <div className="w-full sm:9/12 lg:w-4/12 max-h-full">
