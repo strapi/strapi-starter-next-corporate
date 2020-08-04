@@ -15,11 +15,96 @@ This starter features:
 - Static site generation with Next
 - An integrated Preview Mode, to view your pages on a private URL before publishing them
 
+## Run the starter locally
+
+The easiest way to try this starter is to run it on your computer.
+
+First, you'll need to create your own copy of this starter. You can fork this repository or download it as a zip.
+
+### Database setup
+
+We're going to set up a Postgres database for the Strapi backend. We recommend Postgres because it will then be easier to migrate to production. You'll also be able to import our Postgres backup to get started with seed data.
+
+Follow these steps:
+
+- Make sure you have Postgres installed on your machine, or [download it here](https://www.postgresql.org/download/)
+- Run Postgres locally on port 5432
+- Create a Postgres database for your project with `createdb my-corporate-site`
+- Import the `data.dump` Postgres dump:  
+
+```sh
+pg_restore --verbose --clean --no-acl --no-owner -h localhost -U myuser -d mydb data.dump
+```
+
+Warnings should be safe to ignore.
+
+### Backend development setup
+
+Open a terminal window and cd into the Strapi directory
+
+```sh
+cd back
+```
+
+Copy the .env.example file in this directory to a .env file (which will be ignored by Git):
+
+```sh
+cp .env.example .env
+```
+
+In `.env`, enter the values that match your environment. When using Postgres, our `DATABASE_URL` should look like this:
+
+```sh
+postgres://user:password@localhost:5432/my-corporate-site
+# Or if you don't need a password:
+postgres://localhost:5432/my-corporate-site
+```
+
+Out of the box, this starter connects to a Postgres database in production, and to an SQLite file in development. Feel free to [change these configurations](https://strapi.io/documentation/3.0.0-beta.x/concepts/configurations.html#database) if you need.
+
+Start running Strapi:
+
+```sh
+yarn develop
+```
+
+By default, this starter will use the local provider for file uploads in development, and Cloudinary in production. You can modify this by editing `/back/config/plugins.js`.
+
+If you want to easily migrate your data from develoment to production, you should have the same upload config across environments. But keep in mind that if you deploy on Heroku, local file uploads will not work.
+
+You can view full backend documentation on the [back directory Readme](/back/README.md).
+
+### Frontend development setup
+
+While the Strapi server is running, open a new terminal and cd into the Next.js  app directory.
+
+```sh
+cd front
+```
+
+Copy the .env.local.example file in this directory to .env.local (which will be ignored by Git):
+
+```sh
+cp .env.local.example .env.local
+```
+
+Then set each variable on `.env.local`:
+
+- `STRAPI_PREVIEW_SECRET` can be any random string (but avoid spaces), like `MY_SECRET` - this is used for [Preview Mode](https://nextjs.org/docs/advanced-features/preview-mode).
+- `NEXT_PUBLIC_STRAPI_API_URL` should be set as `http://localhost:1337` (no trailing slash).
+
+Finally, run Next in development mode.
+
+```sh
+yarn install
+yarn dev
+```
+
+You can view full frontend documentation on the [front directory Readme](/front/README.md).
+
 ## Deploy this starter
 
-Let's see how you can build your own website using this starter. We're going to fork this repository, then publish it on Heroku and Vercel.
-
-Start by forking this GitHub repository. You can also download it as a zip, then publish it on your own GitHub account. The goal is to get a repository that you own, where you'll be able to make changes later.
+Let's see how you can build your own website using this starter. We're going to publish your fork of this starter on Heroku and Vercel.
 
 ### Deploy Strapi on Heroku
 
@@ -27,7 +112,7 @@ Start by forking this GitHub repository. You can also download it as a zip, then
 
 ![screen-heroku-create-app](medias/screen-heroku-create-app.png)
 
-Then select GitHub as the deployment method, and connect the fork that we just created.
+Then select GitHub as the deployment method and find your repository.
 
 ![screen-heroku-github-deploy](medias/screen-heroku-github-deploy.png)
 
@@ -98,58 +183,6 @@ Now everytime we make a change in Strapi, Vercel creates a new build!
 ## Customize your corporate site
 
 To edit this website, you'll need to run both the frontend and the backend in your development environment.
-
-### Run the backend locally
-
-Open a terminal window and cd into the Strapi directory
-
-```sh
-cd back
-```
-
-Copy the .env.example file in this directory to a .env file (which will be ignored by Git):
-
-```sh
-cp .env.example .env
-```
-
-Out of the box, this starter connects to a Postgres database in production, and to an SQLite file in development. Feel free to [change these configurations](https://strapi.io/documentation/3.0.0-beta.x/concepts/configurations.html#database) if you need.
-
-Start running Strapi:
-
-```sh
-yarn develop
-```
-
-You can view full backend documentation on the [back directory Readme](/back/README.md).
-
-### Run the frontend locally
-
-While the Strapi server is running, open a new terminal and cd into the Next.js  app directory.
-
-```sh
-cd front
-```
-
-Copy the .env.local.example file in this directory to .env.local (which will be ignored by Git):
-
-```sh
-cp .env.local.example .env.local
-```
-
-Then set each variable on `.env.local`:
-
-- `STRAPI_PREVIEW_SECRET` can be any random string (but avoid spaces), like `MY_SECRET` - this is used for [Preview Mode](https://nextjs.org/docs/advanced-features/preview-mode).
-- `NEXT_PUBLIC_STRAPI_API_URL` should be set as `http://localhost:1337` (no trailing slash).
-
-Finally, run Next in development mode.
-
-```sh
-yarn install
-yarn dev
-```
-
-You can view full frontend documentation on the [front directory Readme](/front/README.md).
 
 ### Adding Sections
 
