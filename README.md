@@ -60,7 +60,7 @@ postgres://user:password@localhost:5432/my-corporate-site
 postgres://localhost:5432/my-corporate-site
 ```
 
-Out of the box, this starter connects to a Postgres database in production, and to an SQLite file in development. Feel free to [change these configurations](https://strapi.io/documentation/3.0.0-beta.x/concepts/configurations.html#database) if you need.
+Out of the box, this starter connects to a Postgres database both in development and production. Feel free to [change these configurations](https://strapi.io/documentation/3.0.0-beta.x/concepts/configurations.html#database) if you need.
 
 Start running Strapi:
 
