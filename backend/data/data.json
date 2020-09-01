@@ -1,0 +1,367 @@
+{
+  "global": {
+    "metaTitleSuffix":"Strapi+Next",
+    "metadata":{
+      "metaTitle":"Strapi+Next starter for Corporate Sites",
+      "metaDescription":"Build you corporate site with Strapi and Next",
+      "twitterCardType":"summary",
+      "twitterUsername":"strapijs",
+      "shareImage":null
+    },
+    "notificationBanner":{
+      "text":"This page was built using the Strapi+Next starter for Coporate Sites.\n[View other Strapi starters](https://github.com/strapi?q=starter&type=&language=)",
+      "type":"info"
+    },
+    "navbar":{
+      "links":[
+        {
+          "url":"/pricing",
+          "newTab":false,
+          "text":"Pricing"
+        },
+        {
+          "url":"/contact",
+          "newTab":false,
+          "text":"Contact"
+        }
+      ],
+      "button":{
+        "url":"#",
+        "newTab":false,
+        "text":"Sign up",
+        "type":"secondary"
+      },
+      "logo":null
+    },
+    "footer":{
+      "smallText":"© Copyright My Company™",
+      "columns":[
+        {
+          "title":"Product",
+          "links":[
+            {
+              "url":"#",
+              "newTab":false,
+              "text":"Features"
+            },
+            {
+              "url":"#",
+              "newTab":false,
+              "text":"Sign up"
+            }
+          ]
+        },
+        {
+          "title":"Legal",
+          "links":[
+            {
+              "url":"#",
+              "newTab":false,
+              "text":"Privacy policy"
+            },
+            {
+              "url":"#",
+              "newTab":false,
+              "text":"Terms & conditions"
+            }
+          ]
+        },
+        {
+          "title":"Company",
+          "links":[
+            {
+              "url":"#",
+              "newTab":false,
+              "text":"Careers"
+            },
+            {
+              "url":"#",
+              "newTab":false,
+              "text":"Team"
+            }
+          ]
+        },
+        {
+          "title":"Social",
+          "links":[
+            {
+              "url":"#",
+              "newTab":false,
+              "text":"Twitter"
+            },
+            {
+              "url":"#",
+              "newTab":false,
+              "text":"LinkedIn"
+            }
+          ]
+        }
+      ],
+      "logo":null
+    },
+    "favicon":null
+  },
+  "pages": [
+    {
+      "slug":"",
+      "shortName":"Home",
+      "status":"published",
+      "metadata":{
+        "metaTitle":"Strapi+Next corporate site starter",
+        "metaDescription":"Build a fully editable site with Strapi and Next",
+        "twitterCardType":"summary",
+        "twitterUsername":null,
+        "shareImage":null
+      },
+      "contentSections":[
+        {
+          "__component":"sections.hero",
+          "title":"The best way to build your Corporate Site",
+          "label":"Strapi & Next starter",
+          "description":"Get started with your Strapi and Next buiness site in seconds.",
+          "smallTextWithLink":"Want to build your own from scratch? Tutorial coming soon",
+          "buttons":[
+            {
+              "url":"https://github.com/strapi/strapi-starter-next-corporate",
+              "newTab":false,
+              "text":"Get started",
+              "type":"primary"
+            },
+            {
+              "url":"https://github.com/strapi/strapi-starter-next-corporate",
+              "newTab":true,
+              "text":"See the code",
+              "type":"secondary"
+            }
+          ],
+          "picture":null
+        },
+        {
+          "__component":"sections.feature-rows-group",
+          "features":[
+            {
+              "title":"Let marketing teams build their pages",
+              "description":"Thanks to a pre-built list of UI sections, marketers can design exactly the pages they want.",
+              "link":{
+                "url":"#",
+                "newTab":false,
+                "text":"View the list of UI sections"
+              },
+              "media":null
+            },
+            {
+              "title":"Leave your developers alone",
+              "description":"You can publish, edit and delete pages without help from developers. Your technical team can finally focus on their tasks.",
+              "link":{
+                "url":"#",
+                "newTab":false,
+                "text":"View how to create a page"
+              },
+              "media":null
+            }
+          ]
+        },
+        {
+          "__component":"sections.feature-columns-group",
+          "features":[
+            {
+              "title":"Preview your changes",
+              "description":"Thanks to an integrated Preview Mode, you can visualize your pages before publishing them.",
+              "icon":null
+            },
+            {
+              "title":"Fully responsive",
+              "description":"This starter works well on all screens, whether it's mobile, tablet or desktop.",
+              "icon":null
+            },
+            {
+              "title":"Easy to customize",
+              "description":"We use Tailwind for styling. You can change your site's theme without digging through the code.",
+              "icon":null
+            }
+          ]
+        },
+        {
+          "__component":"sections.testimonials-group",
+          "title":"Your customer testimonials here",
+          "description":"This section is where you can showcase your customers. Insert quotes, and show the logos of companies who like your product",
+          "link":{
+            "url":"#",
+            "newTab":false,
+            "text":"All testimonials"
+          },
+          "logos":[
+            {
+              "title":"Strapi",
+              "logo":null
+            },
+            {
+              "title":"Strapi 2",
+              "logo":null
+            },
+            {
+              "title":"Strapi 3",
+              "logo":null
+            }
+          ],
+          "testimonials":[
+            {
+              "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+              "authorName":"Your Customer Name",
+              "authorTitle":"A happy customer",
+              "link":"#",
+              "logo":null,
+              "picture":null
+            }
+          ]
+        },
+        {
+          "__component":"sections.bottom-actions",
+          "title":"Start building your website",
+          "buttons":[
+            {
+              "url":"https://github.com/strapi/strapi-starter-next-corporate",
+              "newTab":false,
+              "text":"Get started",
+              "type":"primary"
+            },
+            {
+              "url":"https://github.com/strapi/strapi-starter-next-corporate",
+              "newTab":false,
+              "text":"See the code",
+              "type":"secondary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug":"pricing",
+      "shortName":"Pricing",
+      "status":"published",
+      "metadata":{
+        "metaTitle":"Pricing",
+        "metaDescription":"The different plans",
+        "twitterCardType":"summary",
+        "twitterUsername":null,
+        "shareImage":null
+      },
+      "contentSections":[
+        {
+          "__component":"sections.pricing",
+          "title":"Clear pricing table",
+          "plans":[
+            {
+              "name":"Hobby",
+              "description":"Perfect for side projects",
+              "isRecommended":null,
+              "price":0,
+              "pricePeriod":"forever",
+              "features":[
+                {
+                  "name":"A cool feature"
+                },
+                {
+                  "name":"Another cool feature"
+                },
+                {
+                  "name":"Some other cool feature"
+                }
+              ]
+            },
+            {
+              "name":"Premium",
+              "description":"A more advanced plan for SMBs",
+              "isRecommended":true,
+              "price":20,
+              "pricePeriod":"per month",
+              "features":[
+                {
+                  "name":"The coolest feature"
+                },
+                {
+                  "name":"Nice feature"
+                },
+                {
+                  "name":"Fun feature"
+                }
+              ]
+            },
+            {
+              "name":"Enterprise",
+              "description":"For large companies needs",
+              "isRecommended":null,
+              "price":299,
+              "pricePeriod":"per month",
+              "features":[
+                {
+                  "name":"Amazing feature"
+                },
+                {
+                  "name":"Wow effect feature"
+                },
+                {
+                  "name":"Mesmerizing feature"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug":"secret",
+      "shortName":"Secret",
+      "status":"draft",
+      "metadata":{
+        "metaTitle":"Secret page",
+        "metaDescription":"Preview-only page",
+        "twitterCardType":"summary",
+        "twitterUsername":null,
+        "shareImage":null
+      },
+      "contentSections":[
+        {
+          "__component":"sections.rich-text",
+          "content":"## Secret page\n\nYou can only view this page in Preview Mode."
+        }
+      ]
+    },
+    {
+      "slug":"contact",
+      "shortName":"Contact",
+      "status":"published",
+      "metadata":{
+        "metaTitle":"Contact",
+        "metaDescription":"Get in touch with our team",
+        "twitterCardType":"summary",
+        "twitterUsername":null,
+        "shareImage":null
+      },
+      "contentSections":[
+        {
+          "__component":"sections.rich-text",
+          "content":"# Get in touch\n\n> This is an example of a page that relies almost entirely on the RichText section. It's useful for blog articles, or content-heavy pages like legal terms.\n\nWe'd love to hear from you.\n\n## Social media\n\n* [Twitter](#)\n* [Twitter](#)\n* [Twitter](#)\n\n## Postal address\n\n404 Headless Street\n__92210__ **Saint Cloud**, *France*\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        },
+        {
+          "__component":"sections.bottom-actions",
+          "title":"Get in touch",
+          "buttons":[
+            {
+              "url":"#",
+              "newTab":false,
+              "text":"Send an email",
+              "type":"primary"
+            },
+            {
+              "url":"#",
+              "newTab":false,
+              "text":"DM us on Twitter",
+              "type":"secondary"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
