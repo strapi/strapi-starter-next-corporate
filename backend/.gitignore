@@ -120,7 +120,8 @@ build
 exports
 .cache
 build
-public/uploads
+public/uploads/*
+!public/uploads/.gitkeep
 
 # Custom
 
