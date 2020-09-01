@@ -2,7 +2,7 @@
 
 Next starter for creating a corporate site with Strapi.
 
-[View the live demo](https://strapi-starter-gridsome-portfolio.vercel.app/) • [Read the blog post](https://strapi.io/blog/strapi-starter-next-corporate-site)
+[View the live demo](https://strapi-starter-next-corporate.vercel.app/) • [Read the blog post](https://strapi.io/blog/strapi-starter-next-corporate-site)
 
 ![screen-website](medias/screen-website.png)
 
