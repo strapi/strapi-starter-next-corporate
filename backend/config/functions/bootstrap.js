@@ -54,12 +54,12 @@ function getFileSizeInBytes(filePath) {
 
 function getFileData(fileName) {
   const filePath = `./data/uploads/${fileName}`;
-  
+
   // Parse the file metadata
   const size = getFileSizeInBytes(filePath);
   const ext = fileName.split(".").pop();
-  const mimeType = `image/.${ext}`;
-  
+  const mimeType = `image/${ext === 'svg' ? 'svg+xml' : ext}`;
+
   return {
     path: filePath,
     name: fileName,
