@@ -60,7 +60,7 @@ function PreviewURL() {
   let previewURL
   if (modifiedData.status === 'draft') {
     // Secret Next.js preview URL
-    previewURL = `${FRONTEND_URL || 'http://localhost:3000'}/api/preview?secret=${FRONTEND_PREVIEW_SECRET || 'secret-token'}&slug=${modifiedData.slug}`;
+    previewURL = `${FRONTEND_URL}/api/preview?secret=${FRONTEND_PREVIEW_SECRET}&slug=${modifiedData.slug}`;
   } else {
     // Live public URL
     previewURL = `${FRONTEND_URL}/${modifiedData.slug.replace('__', '/')}`;

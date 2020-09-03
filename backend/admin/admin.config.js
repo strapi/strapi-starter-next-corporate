@@ -6,7 +6,7 @@ module.exports = {
 
     config.plugins.push(
       new webpack.DefinePlugin({
-        FRONTEND_URL: JSON.stringify(process.env.FRONTEND_URL),
+        FRONTEND_URL: JSON.stringify(process.env.FRONTEND_URL || 'http://localhost:3000'),
         FRONTEND_PREVIEW_SECRET: JSON.stringify(
           process.env.FRONTEND_PREVIEW_SECRET || 'secret-token'
         ),
