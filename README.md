@@ -4,7 +4,7 @@ Next starter for creating a corporate site with Strapi.
 
 [View the live demo](https://strapi-starter-next-corporate.vercel.app/) • [Read the blog post](https://strapi.io/blog/strapi-starter-next-corporate-site)
 
-![screen-website](medias/screen-website.png)
+![screen-website](/screenshot.png)
 
 This starter is designed for flexibility. Using it, you'll be able to manage your website content entirely in Strapi, and get a Next app automatically generated. Marketing teams will be able to create pages and design their layout without help from developers.
 
