@@ -9,7 +9,7 @@
       "shareImage":null
     },
     "notificationBanner":{
-      "text":"This page was built using the Strapi+Next starter for Coporate Sites.\n[View other Strapi starters](https://github.com/strapi?q=starter&type=&language=)",
+      "text":"This page was built using the Strapi+Next starter for Corporate Sites.\n[View other Strapi starters](https://strapi.io/starters)",
       "type":"info"
     },
     "navbar":{
