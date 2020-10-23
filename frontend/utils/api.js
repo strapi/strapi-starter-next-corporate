@@ -27,6 +27,6 @@ export async function getPageData(slug, preview = false) {
 
 // Get site data from Strapi (metadata, navbar, footer...)
 export async function getGlobalData() {
-  const global = fetchAPI("/global");
+  const global = await fetchAPI("/global");
   return global;
 }
