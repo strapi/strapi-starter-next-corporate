@@ -74,7 +74,7 @@ We have built sections for you, but you will likely want to add more to fit your
 
 ### Custom theme
 
-We use Tailwind CSS for styling. To modify your page's look, you can edit the theme in `/front/tailwind.config.js`. Read the [Tailwind docs](https://tailwindcss.com/docs/theme/) to view all the changes you can make. For example, you can change the primary color like this:
+We use Tailwind CSS for styling. To modify your page's look, you can edit the theme in `/front/tailwind.config.js`. Read the [Tailwind docs](https://v1.tailwindcss.com/docs/theme) to view all the changes you can make. For example, you can change the primary color like this:
 
 ```js
 const { colors } = require(`tailwindcss/defaultTheme`);
