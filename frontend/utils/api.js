@@ -3,9 +3,19 @@ export function getStrapiURL(path) {
 }
 
 // Helper to make GET requests to Strapi
-export async function fetchAPI(path) {
+
+export async function fetchAPI(path, options = {}) {
+  const defaultOptions = {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  }
+  const mergedOptions = {
+    ...defaultOptions,
+    ...options
+  };
   const requestUrl = getStrapiURL(path);
-  const response = await fetch(requestUrl);
+  const response = await fetch(requestUrl, mergedOptions);
   const data = await response.json();
   return data;
 }
