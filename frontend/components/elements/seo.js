@@ -30,7 +30,8 @@ const Seo = ({ metadata }) => {
       // Only included Twitter data if we have it
       twitter={{
         ...(metadata.twitterCardType && { cardType: metadata.twitterCardType }),
-        ...(metadata.twitterUsername && { cardType: metadata.twitterUsername }),
+          // Handle is the twitter username of the content creator
+        ...(metadata.twitterUsername && { handle: metadata.twitterUsername }),
       }}
     />
   );
