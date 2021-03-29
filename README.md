@@ -19,45 +19,21 @@ This starter features:
 
 ## Getting started
 
-The easiest way to try this starter is to run it locally on your computer.
+Use our `create-strapi-starter` CLI to create your project.
 
-First, you'll need to create your own copy of this starter. You can do so by clicking [the "Use this template" button](https://github.com/strapi/strapi-starter-next-corporate/generate) on GitHub, and filling the [form](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
-
-### Backend
-
-Create a Strapi project named `backend` using the [corporate template](https://github.com/strapi/strapi-template-corporate):
-
-```
+```sh
 # Using Yarn
-yarn create strapi-app backend --template https://github.com/strapi/strapi-template-corporate
+yarn create strapi-starter my-site next-corporate
 
 # Or using NPM
-npx create-strapi-app backend --template https://github.com/strapi/strapi-template-corporate
+npx create-strapi-starter my-site next-corporate
 ```
 
-The Strapi server will automatically start and import sample seed data.
+The CLI will create a monorepo, install dependencies, and run your project automatically.
 
-### Frontend
+The Next frontend server will run here => [http://localhost:3000](http://localhost:3000)
 
-Leave the Strapi backend running in the background. Open another terminal tab, and make sure you're in the `frontend` directory:
-
-```bash
-cd frontend
-```
-
-Install dependencies and start the Next.js server:
-
-```bash
-# Using yarn
-yarn install
-yarn develop
-
-# Using npm
-npm install
-npm run develop
-```
-
-The Next.js server will run here => [http://localhost:3000](http://localhost:3000)
+The Strapi backend server will run here => [http://localhost:1337](http://localhost:1337)
 
 ## Customize your corporate site
 
