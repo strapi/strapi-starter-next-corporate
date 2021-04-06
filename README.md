@@ -35,6 +35,21 @@ The Next frontend server will run here => [http://localhost:3000](http://localho
 
 The Strapi backend server will run here => [http://localhost:1337](http://localhost:1337)
 
+## Preview Mode
+
+You can turn preview mode on with a URL like this:
+
+`http://localhost:3000/api/preview?secret=<preview-secret>&slug=<slug>`
+
+`<preview-secret>` is the secret token defined in your .env config, 
+`<slug>` is the slug you entered in Strapi for your page.
+
+While preview mode is on you can access `draft` pages just like you would `published` pages.  
+
+For example [http://localhost:3000/secret](http://localhost:3000/secret) would be available in preview mode. 
+
+A banner will remain under the navigation to let you know preview mode is on and it will also allow you to turn it off.
+
 ## Customize your corporate site
 
 To edit this website, you'll need to run both the frontend and the backend in your development environment.
@@ -53,7 +68,7 @@ We have built sections for you, but you will likely want to add more to fit your
 We use Tailwind CSS for styling. To modify your page's look, you can edit the theme in `/front/tailwind.config.js`. Read the [Tailwind docs](https://v1.tailwindcss.com/docs/theme) to view all the changes you can make. For example, you can change the primary color like this:
 
 ```js
-const { colors } = require(`tailwindcss/defaultTheme`);
+const { colors } = require(`tailwindcss/defaultTheme`)
 
 module.exports = {
   theme: {
@@ -63,15 +78,15 @@ module.exports = {
       },
     },
   },
-};
+}
 ```
 
 ## Deploying to production
 
 You will need to deploy the `frontend` and `backend` projects separately. Here are the docs to deploy each one:
 
-* [Deploy Strapi](https://strapi.io/documentation/v3.x/admin-panel/deploy.html#deployment)
-* [Deploy Next.js](https://nextjs.org/docs/deployment)
+- [Deploy Strapi](https://strapi.io/documentation/v3.x/admin-panel/deploy.html#deployment)
+- [Deploy Next.js](https://nextjs.org/docs/deployment)
 
 Don't forget to set up your environment variables on your production apps.
 
