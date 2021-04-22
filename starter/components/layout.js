@@ -1,15 +1,12 @@
-import Link from "next/link";
-import ButtonLink from "./elements/button-link";
-import Navbar from "./elements/navbar";
-import Footer from "./elements/footer";
-import NotificationBanner from "./elements/notification-banner";
-import { useState } from "react";
+import Navbar from "./elements/navbar"
+import Footer from "./elements/footer"
+import NotificationBanner from "./elements/notification-banner"
+import { useState } from "react"
 
-const Layout = ({ children, global }) => {
-  const { navbar, footer, notificationBanner } = global;
+const Layout = ({ children, global, pageContext }) => {
+  const { navbar, footer, notificationBanner } = global
 
-  const [bannerIsShown, setBannerIsShown] = useState(true);
-
+  const [bannerIsShown, setBannerIsShown] = useState(true)
   return (
     <div className="flex flex-col justify-between min-h-screen">
       {/* Aligned to the top */}
@@ -20,13 +17,16 @@ const Layout = ({ children, global }) => {
             closeSelf={() => setBannerIsShown(false)}
           />
         )}
-        <Navbar navbar={navbar} />
+        <Navbar
+          navbar={navbar}
+          pageContext={pageContext}
+        />
         <div>{children}</div>
       </div>
       {/* Aligned to the bottom */}
       <Footer footer={footer} />
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

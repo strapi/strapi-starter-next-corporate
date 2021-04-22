@@ -1,15 +1,14 @@
 export function getStrapiURL(path) {
   return `${
-    process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'
+    process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
   }${path}`
 }
 
 // Helper to make GET requests to Strapi
-
 export async function fetchAPI(path, options = {}) {
   const defaultOptions = {
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   }
   const mergedOptions = {
@@ -27,10 +26,19 @@ export async function fetchAPI(path, options = {}) {
   return data
 }
 
-export async function getPageData(slug, preview = false) {
+/**
+ *
+ * @param {object} params The router params object with slug: { slug: [<slug>] }
+ * @param {string} locale The current locale specified in router.locale
+ * @param {boolean} preview router isPreview value
+ */
+export async function getPageData(params, locale, preview) {
+  const slug = params.slug.join("/")
   // Find the pages that match this slug
   const pagesData = await fetchAPI(
-    `/pages?slug=${slug}&status=published${preview ? '&status=draft' : ''}`
+    `/pages?slug=${slug}&_locale=${locale}&status=published${
+      preview ? "&status=draft" : ""
+    }`
   )
 
   // Make sure we found something, otherwise return null
@@ -43,7 +51,7 @@ export async function getPageData(slug, preview = false) {
 }
 
 // Get site data from Strapi (metadata, navbar, footer...)
-export async function getGlobalData() {
-  const global = await fetchAPI('/global')
+export async function getGlobalData(locale) {
+  const global = await fetchAPI(`/global?_locale=${locale}`)
   return global
 }
