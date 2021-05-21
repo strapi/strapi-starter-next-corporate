@@ -18,7 +18,7 @@
     "js-cookie": "^2.2.1",
     "next": "^10.0.0",
     "next-seo": "^4.7.1",
-    "postcss": "^7",
+    "postcss": "^8",
     "postcss-nested": "^4.2.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.0",
