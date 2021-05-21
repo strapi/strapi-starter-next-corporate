@@ -5,6 +5,6 @@ export default async function exit(req, res) {
   res.clearPreviewData();
 
   // Redirect the user back to a provided redirect path or the index page
-  res.writeHead(307, { Location: req.query.redirect || "/" });
+  res.writeHead(307, { Location: "/" });
   res.end();
 }
