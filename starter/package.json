@@ -8,9 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@tailwindcss/postcss7-compat": "^2.0.2",
-    "@tailwindcss/typography": "^0.3.0",
-    "autoprefixer": "^9",
+    "@tailwindcss/typography": "^0.4.1",
     "classnames": "^2.2.6",
     "cookie": "^0.4.1",
     "date-fns": "2.14.0",
@@ -18,18 +16,20 @@
     "js-cookie": "^2.2.1",
     "next": "^10.0.0",
     "next-seo": "^4.7.1",
-    "postcss": "^7",
-    "postcss-nested": "^4.2.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-icons": "^3.10.0",
     "react-markdown": "^4.3.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "yup": "^0.32.8"
   },
   "devDependencies": {
-    "postcss-flexbugs-fixes": "4.2.1",
-    "postcss-preset-env": "^6.7.0"
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.0",
+    "postcss-custom-properties": "^11.0.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^14.0.2",
+    "postcss-nesting": "^8.0.1",
+    "tailwindcss": "^2.1.4"
   }
 }
