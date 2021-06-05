@@ -1,11 +1,11 @@
 import Markdown from "react-markdown";
-import classNames from "classnames";
+import clsx from "clsx";
 import { MdClose } from "react-icons/md";
 
 const NotificationBanner = ({ data: { text, type }, closeSelf }) => {
   return (
     <div
-      className={classNames(
+      className={clsx(
         // Common classes
         "text-white px-2 py-2",
         {

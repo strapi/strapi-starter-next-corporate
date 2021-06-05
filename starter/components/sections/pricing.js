@@ -1,5 +1,5 @@
 import { MdCheckBox } from "react-icons/md";
-import classNames from "classnames";
+import clsx from "clsx";
 
 const Pricing = ({ data }) => {
   return (
@@ -8,7 +8,7 @@ const Pricing = ({ data }) => {
       <div className="flex flex-col lg:flex-row gap-4 lg:justify-center mt-6">
         {data.plans.map((plan) => (
           <div
-            className={classNames(
+            className={clsx(
               // Common classes
               "rounded-md border-2 py-4 px-4 flex-1 md:w-lg",
               // Normal plan
@@ -25,7 +25,7 @@ const Pricing = ({ data }) => {
           >
             <h2 className="text-2xl">{plan.name}</h2>
             <p
-              className={classNames("mt-4 text-lg", {
+              className={clsx("mt-4 text-lg", {
                 "text-primary-700": plan.isRecommended,
                 "text-gray-700": !plan.isRecommended,
               })}

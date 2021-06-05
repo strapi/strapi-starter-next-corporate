@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import { useState } from "react";
 import Image from "../elements/image";
 import CustomLink from "../elements/custom-link";
@@ -50,7 +50,7 @@ const TestimonialsGroup = ({ data }) => {
           {data.testimonials.map((testimonial, index) => (
             <button
               onClick={() => setSelectedTestimonialIndex(index)}
-              className={classNames(
+              className={clsx(
                 // Common classes
                 "rounded-full h-3 w-3",
                 {

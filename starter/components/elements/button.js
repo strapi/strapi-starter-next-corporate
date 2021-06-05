@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import clsx from 'clsx'
 import PropTypes from 'prop-types'
 import { buttonLinkPropTypes } from 'utils/types'
 import Loader from './loader'
@@ -14,7 +14,7 @@ const Button = ({
   return (
     <button link={button} onClick={handleClick} type={type}>
       <div
-        className={classNames(
+        className={clsx(
           // Common classes
           'flex w-full justify-center lg:w-auto text-center uppercase tracking-wide font-semibold text-base md:text-sm border-2 rounded-md',
           // Full-size button

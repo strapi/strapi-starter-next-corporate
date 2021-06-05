@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 import { buttonLinkPropTypes } from "utils/types";
 import Link from "next/link";
@@ -7,7 +7,7 @@ import CustomLink from "./custom-link";
 const ButtonContent = ({ button, appearance, compact }) => {
   return (
     <div
-      className={classNames(
+      className={clsx(
         // Common classes
         "block w-full lg:w-auto text-center uppercase tracking-wide font-semibold text-base md:text-sm border-2 rounded-md",
         // Full-size button

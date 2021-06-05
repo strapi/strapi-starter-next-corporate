@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import Image from "../elements/image";
 import Video from "../elements/video";
 import CustomLink from "../elements/custom-link";
@@ -8,7 +8,7 @@ const FeatureRowsGroup = ({ data }) => {
     <div className="container flex flex-col gap-12 py-12">
       {data.features.map((feature, index) => (
         <div
-          className={classNames(
+          className={clsx(
             // Common classes
             "flex flex-col justify-start md:justify-between md:items-center gap-10",
             {
