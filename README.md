@@ -16,6 +16,11 @@ This starter features:
 - Easy to theme with Tailwind
 - Static site generation with Next
 - An integrated Preview Mode, to view your pages on a private URL before publishing them
+- Content in multiple languages using i18n
+
+This starter uses the [Strapi corporate template](https://github.com/strapi/strapi-template-corporate)
+
+Check out all of our starters [here](https://strapi.io/starters)
 
 ## Getting started
 
@@ -41,12 +46,12 @@ You can turn preview mode on with a URL like this:
 
 `http://localhost:3000/api/preview?secret=<preview-secret>&slug=<slug>`
 
-`<preview-secret>` is the secret token defined in your .env config, 
+`<preview-secret>` is the secret token defined in your .env config,
 `<slug>` is the slug you entered in Strapi for your page.
 
-While preview mode is on you can access `draft` pages just like you would `published` pages.  
+While preview mode is on you can access `draft` pages just like you would `published` pages.
 
-For example [http://localhost:3000/secret](http://localhost:3000/secret) would be available in preview mode. 
+For example [http://localhost:3000/secret](http://localhost:3000/secret) would be available in preview mode.
 
 A banner will remain under the navigation to let you know preview mode is on and it will also allow you to turn it off.
 
