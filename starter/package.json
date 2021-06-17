@@ -13,17 +13,18 @@
     "cookie": "^0.4.1",
     "date-fns": "2.14.0",
     "formik": "^2.2.6",
-    "js-cookie": "^2.2.1",
+    "js-cookie": "^3.0.0-rc.1",
     "next": "^11.0.0",
-    "next-seo": "^4.7.1",
+    "next-seo": "^4.25.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-icons": "^3.10.0",
-    "react-markdown": "^4.3.1",
-    "yup": "^0.32.8"
+    "react-markdown": "^6.0.2",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
+    "@types/react": "^17.0.9",
     "autoprefixer": "^10.2.6",
     "postcss": "^8.3.0",
     "postcss-custom-properties": "^11.0.0",
