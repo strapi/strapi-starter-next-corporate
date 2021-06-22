@@ -1,11 +1,11 @@
-import App from "next/app"
-import Head from "next/head"
-import ErrorPage from "next/error"
-import { useRouter } from "next/router"
-import { DefaultSeo } from "next-seo"
-import { getStrapiMedia } from "utils/media"
-import { getGlobalData } from "utils/api"
-import "@/styles/index.css"
+import App from 'next/app'
+import Head from 'next/head'
+import ErrorPage from 'next/error'
+import { useRouter } from 'next/router'
+import { DefaultSeo } from 'next-seo'
+import { getStrapiMedia } from 'utils/media'
+import { getGlobalData } from 'utils/api'
+import '@/styles/index.css'
 
 const MyApp = ({ Component, pageProps }) => {
   // Extract the data we need
@@ -25,7 +25,7 @@ const MyApp = ({ Component, pageProps }) => {
       {/* Global site metadata */}
       <DefaultSeo
         titleTemplate={`%s | ${global.metaTitleSuffix}`}
-        title={"Page"}
+        title="Page"
         description={metadata.metaDescription}
         openGraph={{
           images: Object.values(metadata.shareImage.formats).map((image) => {
@@ -56,7 +56,7 @@ MyApp.getInitialProps = async (appContext) => {
   const appProps = await App.getInitialProps(appContext)
 
   const globalLocale = await getGlobalData(appContext.router.locale)
-  
+
   return {
     ...appProps,
     pageProps: {

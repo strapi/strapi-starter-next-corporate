@@ -1,20 +1,19 @@
-import { useEffect, useState, useRef } from "react"
-import { useRouter } from "next/router"
-import PropTypes from "prop-types"
-import Link from "next/link"
+import { useEffect, useState, useRef } from 'react'
+import { useRouter } from 'next/router'
+import PropTypes from 'prop-types'
+import Link from 'next/link'
 
-import WorldIcon from "./icons/world"
+import { parseCookies } from 'utils/parse-cookies'
+import Cookies from 'js-cookie'
+import { MdExpandMore } from 'react-icons/md'
+import WorldIcon from './icons/world'
 
-import { useOnClickOutside } from "../utils/hooks"
+import { useOnClickOutside } from '../utils/hooks'
 import {
   listLocalizedPaths,
   getLocalizedPage,
   localizePath,
-} from "../utils/localize"
-
-import { parseCookies } from "utils/parse-cookies"
-import Cookies from "js-cookie"
-import { MdExpandMore } from "react-icons/md"
+} from '../utils/localize'
 
 const LocaleSwitch = ({ pageContext }) => {
   const isMounted = useRef(false)
@@ -27,7 +26,7 @@ const LocaleSwitch = ({ pageContext }) => {
   const handleLocaleChange = async (selectedLocale) => {
     // Persist the user's language preference
     // https://nextjs.org/docs/advanced-features/i18n-routing#leveraging-the-next_locale-cookie
-    Cookies.set("NEXT_LOCALE", selectedLocale)
+    Cookies.set('NEXT_LOCALE', selectedLocale)
     setLocale(selectedLocale)
   }
 
@@ -65,11 +64,12 @@ const LocaleSwitch = ({ pageContext }) => {
     return () => {
       isMounted.current = true
     }
-  }, [locale, router])
+  }, [router, pageContext])
 
   return (
     <div ref={select} className="relative ml-4 ">
       <button
+        type="button"
         className="hover:bg-primary-50 hover:text-primary-600 focus:bg-primary-50 focus:text-primary-600 focus:outline-none flex items-center justify-between px-2 py-2 cursor-pointer h-full rounded-md w-20"
         onClick={() => setShowing(!showing)}
       >
@@ -79,7 +79,7 @@ const LocaleSwitch = ({ pageContext }) => {
       </button>
       <div
         className={`w-full bg-white p-1 mt-1 shadow-lg rounded-md ${
-          showing ? "absolute" : "hidden"
+          showing ? 'absolute' : 'hidden'
         }`}
       >
         {localizedPaths &&

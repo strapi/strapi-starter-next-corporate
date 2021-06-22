@@ -1,12 +1,12 @@
-import classNames from "classnames";
-import { useState } from "react";
-import Image from "../elements/image";
-import CustomLink from "../elements/custom-link";
+import classNames from 'classnames'
+import { useState } from 'react'
+import Image from '../elements/image'
+import CustomLink from '../elements/custom-link'
 
 const TestimonialsGroup = ({ data }) => {
   // Only show one testimonial at a time
-  const [selectedTestimonialIndex, setSelectedTestimonialIndex] = useState(0);
-  const selectedTestimonial = data.testimonials[selectedTestimonialIndex];
+  const [selectedTestimonialIndex, setSelectedTestimonialIndex] = useState(0)
+  const selectedTestimonial = data.testimonials[selectedTestimonialIndex]
 
   return (
     <section className="text-center text-lg bg-gray-200 pt-12 pb-16">
@@ -37,7 +37,14 @@ const TestimonialsGroup = ({ data }) => {
               {selectedTestimonial.authorTitle}
             </p>
           </div>
-          <CustomLink link={{ url: selectedTestimonial.link, text: '', newTab: false, id: 0 }}>
+          <CustomLink
+            link={{
+              url: selectedTestimonial.link,
+              text: '',
+              newTab: false,
+              id: 0,
+            }}
+          >
             <span className="uppercase tracking-wide text-blue-700 hover:underline  with-arrow sm:self-end mt-6 sm:mt-0">
               Read story
             </span>
@@ -52,14 +59,14 @@ const TestimonialsGroup = ({ data }) => {
               onClick={() => setSelectedTestimonialIndex(index)}
               className={classNames(
                 // Common classes
-                "rounded-full h-3 w-3",
+                'rounded-full h-3 w-3',
                 {
-                  "bg-gray-500": index !== selectedTestimonialIndex,
-                  "bg-primary-600": index === selectedTestimonialIndex,
+                  'bg-gray-500': index !== selectedTestimonialIndex,
+                  'bg-primary-600': index === selectedTestimonialIndex,
                 }
               )}
               key={testimonial.id}
-            ></button>
+            />
           ))}
         </div>
       )}
@@ -74,7 +81,7 @@ const TestimonialsGroup = ({ data }) => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default TestimonialsGroup;
+export default TestimonialsGroup

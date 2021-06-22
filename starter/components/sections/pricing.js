@@ -1,5 +1,5 @@
-import { MdCheckBox } from "react-icons/md";
-import classNames from "classnames";
+import { MdCheckBox } from 'react-icons/md'
+import classNames from 'classnames'
 
 const Pricing = ({ data }) => {
   return (
@@ -10,14 +10,15 @@ const Pricing = ({ data }) => {
           <div
             className={classNames(
               // Common classes
-              "rounded-md border-2 py-4 px-4 flex-1 md:w-lg",
+              'rounded-md border-2 py-4 px-4 flex-1 md:w-lg',
               // Normal plan
               {
-                "bg-gray-100 text-gray-900 border-gray-300": !plan.isRecommended,
+                'bg-gray-100 text-gray-900 border-gray-300':
+                  !plan.isRecommended,
               },
               // Recommended plan
               {
-                "bg-primary-100 text-primary-900 border-primary-300":
+                'bg-primary-100 text-primary-900 border-primary-300':
                   plan.isRecommended,
               }
             )}
@@ -25,15 +26,15 @@ const Pricing = ({ data }) => {
           >
             <h2 className="text-2xl">{plan.name}</h2>
             <p
-              className={classNames("mt-4 text-lg", {
-                "text-primary-700": plan.isRecommended,
-                "text-gray-700": !plan.isRecommended,
+              className={classNames('mt-4 text-lg', {
+                'text-primary-700': plan.isRecommended,
+                'text-gray-700': !plan.isRecommended,
               })}
             >
               {plan.description}
             </p>
             <p className="text-3xl mt-4">
-              {plan.price === 0 ? "Free " : `$${plan.price} `}
+              {plan.price === 0 ? 'Free ' : `$${plan.price} `}
               <span className="text-base font-medium">{plan.pricePeriod}</span>
             </p>
             <ul className="mt-4 flex flex-col gap-3">
@@ -51,7 +52,7 @@ const Pricing = ({ data }) => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Pricing;
+export default Pricing
