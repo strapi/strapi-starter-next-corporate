@@ -1,8 +1,8 @@
-import Button from '../elements/button'
 import { useState } from 'react'
 import { fetchAPI } from 'utils/api'
 import * as yup from 'yup'
 import { Formik, Form, Field } from 'formik'
+import Button from '../elements/button'
 
 const LeadForm = ({ data }) => {
   const [loading, setLoading] = useState(false)
@@ -38,11 +38,7 @@ const LeadForm = ({ data }) => {
             setSubmitting(false)
           }}
         >
-          {({
-            errors,
-            touched,
-            isSubmitting,
-          }) => (
+          {({ errors, touched, isSubmitting }) => (
             <div>
               <Form className="flex flex-col md:flex-row gap-4">
                 <Field

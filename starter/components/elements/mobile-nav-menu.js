@@ -1,19 +1,15 @@
-import PropTypes from "prop-types";
-import { MdClose, MdChevronRight } from "react-icons/md";
-import Image from "./image";
-import {
-  mediaPropTypes,
-  linkPropTypes,
-  buttonLinkPropTypes,
-} from "utils/types";
-import ButtonLink from "./button-link";
-import { useLockBodyScroll } from "utils/hooks";
-import { getButtonAppearance } from "utils/button";
-import CustomLink from "./custom-link";
+import PropTypes from 'prop-types'
+import { MdClose, MdChevronRight } from 'react-icons/md'
+import { mediaPropTypes, linkPropTypes, buttonLinkPropTypes } from 'utils/types'
+import { useLockBodyScroll } from 'utils/hooks'
+import { getButtonAppearance } from 'utils/button'
+import ButtonLink from './button-link'
+import Image from './image'
+import CustomLink from './custom-link'
 
 const MobileNavMenu = ({ navbar, closeSelf }) => {
   // Prevent window scroll while mobile nav menu is open
-  useLockBodyScroll();
+  useLockBodyScroll()
 
   return (
     <div className="w-screen h-screen fixed top-0 left-0 overflow-y-scroll bg-white z-10 pb-6">
@@ -43,13 +39,13 @@ const MobileNavMenu = ({ navbar, closeSelf }) => {
           </ul>
           <ButtonLink
             button={navbar.button}
-            appearance={getButtonAppearance(navbar.button.type, "light")}
+            appearance={getButtonAppearance(navbar.button.type, 'light')}
           />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 MobileNavMenu.propTypes = {
   navbar: PropTypes.shape({
@@ -58,6 +54,6 @@ MobileNavMenu.propTypes = {
     button: buttonLinkPropTypes,
   }),
   closeSelf: PropTypes.func,
-};
+}
 
-export default MobileNavMenu;
+export default MobileNavMenu

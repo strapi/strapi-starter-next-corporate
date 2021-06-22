@@ -1,4 +1,4 @@
-import { fetchAPI } from "./api"
+import { fetchAPI } from './api'
 
 export async function getLocalizedPage(targetLocale, pageContext) {
   const localization = pageContext.localizations.find(

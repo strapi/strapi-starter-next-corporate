@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import classNames from "classnames"
 import Image from "../elements/image"
 import Video from "../elements/video"
 import CustomLink from "../elements/custom-link"
+=======
+import classNames from 'classnames'
+import Image from '../elements/image'
+import Video from '../elements/video'
+import CustomLink from '../elements/custom-link'
+>>>>>>> 04f09ee (add eslint and prettier config)
 
 const FeatureRowsGroup = ({ data }) => {
   return (
@@ -10,10 +17,10 @@ const FeatureRowsGroup = ({ data }) => {
         <div
           className={classNames(
             // Common classes
-            "flex flex-col justify-start md:justify-between md:items-center gap-10",
+            'flex flex-col justify-start md:justify-between md:items-center gap-10',
             {
-              "lg:flex-row": index % 2 === 0,
-              "lg:flex-row-reverse": index % 2 === 1,
+              'lg:flex-row': index % 2 === 0,
+              'lg:flex-row-reverse': index % 2 === 1,
             }
           )}
           key={feature.id}
@@ -37,7 +44,7 @@ const FeatureRowsGroup = ({ data }) => {
               </div>
             )}
             {/* Videos */}
-            {feature.media.mime.startsWith("video") && (
+            {feature.media.mime.startsWith('video') && (
               <Video
                 media={feature.media}
                 className="w-full h-auto"

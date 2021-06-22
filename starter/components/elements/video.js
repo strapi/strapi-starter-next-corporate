@@ -1,6 +1,6 @@
-import PropTypes from "prop-types";
-import { getStrapiMedia } from "utils/media";
-import { mediaPropTypes } from "utils/types";
+import PropTypes from 'prop-types'
+import { getStrapiMedia } from 'utils/media'
+import { mediaPropTypes } from 'utils/types'
 
 const Video = ({
   media,
@@ -9,8 +9,8 @@ const Video = ({
   controls = true,
   autoPlay = false,
 }) => {
-  const fullVideoUrl = getStrapiMedia(media.url);
-  const fullPosterUrl = getStrapiMedia(poster?.url);
+  const fullVideoUrl = getStrapiMedia(media.url)
+  const fullPosterUrl = getStrapiMedia(poster?.url)
 
   return (
     <video
@@ -21,8 +21,8 @@ const Video = ({
     >
       <source src={fullVideoUrl} type={media.mime} />
     </video>
-  );
-};
+  )
+}
 
 Video.propTypes = {
   media: mediaPropTypes.isRequired,
@@ -30,6 +30,6 @@ Video.propTypes = {
   className: PropTypes.string,
   controls: PropTypes.bool,
   autoPlay: PropTypes.bool,
-};
+}
 
-export default Video;
+export default Video
