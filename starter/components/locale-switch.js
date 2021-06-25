@@ -9,11 +9,7 @@ import { MdExpandMore } from 'react-icons/md'
 import WorldIcon from './icons/world'
 
 import { useOnClickOutside } from '../utils/hooks'
-import {
-  listLocalizedPaths,
-  getLocalizedPage,
-  localizePath,
-} from '../utils/localize'
+import { getLocalizedPage, localizePath } from '../utils/localize'
 
 const LocaleSwitch = ({ pageContext }) => {
   const isMounted = useRef(false)
@@ -21,7 +17,6 @@ const LocaleSwitch = ({ pageContext }) => {
   const router = useRouter()
   const [locale, setLocale] = useState()
   const [showing, setShowing] = useState(false)
-  const [localizedPaths, setLocalizedPaths] = useState()
 
   const handleLocaleChange = async (selectedLocale) => {
     // Persist the user's language preference
@@ -30,20 +25,23 @@ const LocaleSwitch = ({ pageContext }) => {
     setLocale(selectedLocale)
   }
 
+  const handleLocaleChangeRef = useRef(handleLocaleChange)
   useOnClickOutside(select, () => setShowing(false))
 
   useEffect(() => {
-    const changeLocale = async () => {
+    const localeCookie = Cookies.get('NEXT_LOCALE')
+    if (!localeCookie) {
+      handleLocaleChangeRef.current(router.locale)
+    }
+
+    const checkLocaleMismatch = async () => {
       if (
         !isMounted.current &&
-        cookies.NEXT_LOCALE &&
-        cookies.NEXT_LOCALE !== pageContext.locale
+        localeCookie &&
+        localeCookie !== pageContext.locale
       ) {
         // Redirect to locale page if locale mismatch
-        const localePage = await getLocalizedPage(
-          cookies.NEXT_LOCALE,
-          pageContext
-        )
+        const localePage = getLocalizedPage(localeCookie, pageContext)
 
         router.push(
           `${localizePath({ ...pageContext, ...localePage })}`,
@@ -51,15 +49,11 @@ const LocaleSwitch = ({ pageContext }) => {
           { locale: localePage.locale }
         )
       }
-
       setShowing(false)
-      const localizations = await listLocalizedPaths(pageContext)
-      setLocalizedPaths(localizations)
     }
 
-    const cookies = parseCookies()
-    setLocale(cookies.NEXT_LOCALE || router.locale)
-    changeLocale()
+    setLocale(localeCookie || router.locale)
+    checkLocaleMismatch()
 
     return () => {
       isMounted.current = true
@@ -82,8 +76,8 @@ const LocaleSwitch = ({ pageContext }) => {
           showing ? 'absolute' : 'hidden'
         }`}
       >
-        {localizedPaths &&
-          localizedPaths.map(({ href, locale }) => {
+        {pageContext.localizedPaths &&
+          pageContext.localizedPaths.map(({ href, locale }) => {
             return (
               <Link href={href} key={locale} locale={locale} role="option">
                 <p
