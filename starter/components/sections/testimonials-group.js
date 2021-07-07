@@ -1,7 +1,7 @@
-import classNames from 'classnames'
-import { useState } from 'react'
-import Image from '../elements/image'
-import CustomLink from '../elements/custom-link'
+import classNames from "classnames"
+import { useState } from "react"
+import Image from "../elements/image"
+import CustomLink from "../elements/custom-link"
 
 const TestimonialsGroup = ({ data }) => {
   // Only show one testimonial at a time
@@ -29,7 +29,7 @@ const TestimonialsGroup = ({ data }) => {
               media={selectedTestimonial.logo}
               className="h-8 w-auto mb-6 sm:mb-10 mt-2 sm:mt-0"
             />
-            <p className="italic mb-6">"{selectedTestimonial.text}"</p>
+            <p className="italic mb-6">&quot{selectedTestimonial.text}&quot</p>
             <p className="font-bold text-base sm:text-sm">
               {selectedTestimonial.authorName}
             </p>
@@ -40,7 +40,7 @@ const TestimonialsGroup = ({ data }) => {
           <CustomLink
             link={{
               url: selectedTestimonial.link,
-              text: '',
+              text: "",
               newTab: false,
               id: 0,
             }}

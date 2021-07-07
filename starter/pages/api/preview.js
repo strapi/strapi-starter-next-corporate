@@ -1,7 +1,7 @@
 import { getPageData } from 'utils/api'
 import { parseCookies } from 'utils/parse-cookies'
 
-export default async (req, res) => {
+const preview = async (req, res) => {
   // Check the secret and next parameters
   // This secret should only be known to this API route and the CMS
   if (req.query.secret !== (process.env.PREVIEW_SECRET || 'secret-token')) {
@@ -9,7 +9,7 @@ export default async (req, res) => {
   }
 
   const cookies = parseCookies(req)
-  const slugArray = req.query.slug.split('/')
+  const slugArray = req.query.slug.split("/")
   // Fetch the headless CMS to check if the provided `slug` exists
   const pageData = await getPageData(
     { slug: slugArray },
@@ -33,6 +33,8 @@ export default async (req, res) => {
   })
   res.end()
 }
+
+export default preview
 
 // You can view Preview pages with URLs like this:
 // http://localhost:3000/api/preview?secret=<preview-secret>&slug=<slug>

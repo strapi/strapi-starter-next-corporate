@@ -3,13 +3,11 @@ import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 
-import { parseCookies } from 'utils/parse-cookies'
-import Cookies from 'js-cookie'
-import { MdExpandMore } from 'react-icons/md'
-import WorldIcon from './icons/world'
+import Cookies from "js-cookie"
+import { MdExpandMore } from "react-icons/md"
+import WorldIcon from "./icons/world"
 
-import { useOnClickOutside } from '../utils/hooks'
-import { getLocalizedPage, localizePath } from '../utils/localize'
+import { useOnClickOutside } from "../utils/hooks"
 
 const LocaleSwitch = ({ pageContext }) => {
   const isMounted = useRef(false)
@@ -29,7 +27,7 @@ const LocaleSwitch = ({ pageContext }) => {
   useOnClickOutside(select, () => setShowing(false))
 
   useEffect(() => {
-    const localeCookie = Cookies.get('NEXT_LOCALE')
+    const localeCookie = Cookies.get("NEXT_LOCALE")
     if (!localeCookie) {
       handleLocaleChangeRef.current(router.locale)
     }
@@ -58,7 +56,7 @@ const LocaleSwitch = ({ pageContext }) => {
     return () => {
       isMounted.current = true
     }
-  }, [router, pageContext])
+  }, [locale, router, pageContext])
 
   return (
     <div ref={select} className="relative ml-4 ">
@@ -79,7 +77,13 @@ const LocaleSwitch = ({ pageContext }) => {
         {pageContext.localizedPaths &&
           pageContext.localizedPaths.map(({ href, locale }) => {
             return (
-              <Link href={href} key={locale} locale={locale} role="option">
+              <Link
+                href={href}
+                key={locale}
+                locale={locale}
+                role="option"
+                passHref
+              >
                 <p
                   onClick={() => handleLocaleChange(locale)}
                   className="capitalize hover:bg-primary-50 hover:text-primary-600  cursor-pointer p-2 rounded-md text-center hover:text-primary-600"
