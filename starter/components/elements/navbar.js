@@ -26,11 +26,8 @@ const Navbar = ({ navbar, pageContext }) => {
           {/* Content aligned to the left */}
           <div className="flex flex-row items-center">
             <Link href="/">
-              <a>
-                <Image
-                  media={navbar.logo}
-                  className="h-8 w-auto object-contain"
-                />
+              <a className="h-8 w-32">
+                <Image media={navbar.logo} />
               </a>
             </Link>
             {/* List of links on desktop */}

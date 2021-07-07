@@ -1,7 +1,7 @@
-import Image from "./image";
-import PropTypes from "prop-types";
-import { linkPropTypes, mediaPropTypes } from "utils/types";
-import CustomLink from "./custom-link";
+import Image from "./image"
+import PropTypes from "prop-types"
+import { linkPropTypes, mediaPropTypes } from "utils/types"
+import CustomLink from "./custom-link"
 
 const Footer = ({ footer }) => {
   return (
@@ -9,7 +9,9 @@ const Footer = ({ footer }) => {
       <div className="container flex flex-col lg:flex-row lg:justify-between">
         <div>
           {footer.logo && (
-            <Image media={footer.logo} className="h-8 w-auto object-contain" />
+            <div className="h-8 w-32">
+              <Image media={footer.logo} />
+            </div>
           )}
         </div>
         <nav className="flex flex-wrap flex-row lg:gap-20 items-start lg:justify-end mb-10">
@@ -23,10 +25,11 @@ const Footer = ({ footer }) => {
               </p>
               <ul className="mt-2">
                 {footerColumn.links.map((link) => (
-                  <li key={link.id} className="text-gray-700 py-1 px-1 -mx-1 hover:text-gray-900">
-                    <CustomLink link={link}>
-                      {link.text}
-                    </CustomLink>
+                  <li
+                    key={link.id}
+                    className="text-gray-700 py-1 px-1 -mx-1 hover:text-gray-900"
+                  >
+                    <CustomLink link={link}>{link.text}</CustomLink>
                   </li>
                 ))}
               </ul>
@@ -38,8 +41,8 @@ const Footer = ({ footer }) => {
         <div className="container">{footer.smallText}</div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
 Footer.propTypes = {
   footer: PropTypes.shape({
@@ -54,6 +57,6 @@ Footer.propTypes = {
     ),
     smallText: PropTypes.string.isRequired,
   }),
-};
+}
 
-export default Footer;
+export default Footer

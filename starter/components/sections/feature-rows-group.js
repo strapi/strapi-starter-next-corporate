@@ -1,7 +1,7 @@
-import classNames from "classnames";
-import Image from "../elements/image";
-import Video from "../elements/video";
-import CustomLink from "../elements/custom-link";
+import classNames from "classnames"
+import Image from "../elements/image"
+import Video from "../elements/video"
+import CustomLink from "../elements/custom-link"
 
 const FeatureRowsGroup = ({ data }) => {
   return (
@@ -32,7 +32,9 @@ const FeatureRowsGroup = ({ data }) => {
           <div className="w-full sm:9/12 lg:w-4/12 max-h-full">
             {/* Images */}
             {feature.media.mime.startsWith("image") && (
-              <Image media={feature.media} className="w-full h-auto" />
+              <div className="w-full h-auto">
+                <Image media={feature.media} />
+              </div>
             )}
             {/* Videos */}
             {feature.media.mime.startsWith("video") && (
@@ -47,7 +49,7 @@ const FeatureRowsGroup = ({ data }) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default FeatureRowsGroup;
+export default FeatureRowsGroup

@@ -1,19 +1,32 @@
-import { getStrapiMedia } from "utils/media";
-import PropTypes from "prop-types";
-import { mediaPropTypes } from "utils/types";
+import { getStrapiMedia } from "utils/media"
+import NextImage from "next/image"
+import PropTypes from "prop-types"
+import { mediaPropTypes } from "utils/types"
 
-const Image = ({ media, className }) => {
-  const { url, alternativeText } = media;
-  const fullUrl = getStrapiMedia(url);
+const Image = ({ media }) => {
+  const { url, alternativeText } = media
 
+  const loader = ({ src }) => {
+    return getStrapiMedia(src)
+  }
+
+  // TODO add placeholder
   return (
-    <img src={fullUrl} alt={alternativeText || ""} className={className} />
-  );
-};
+    <NextImage
+      loader={loader}
+      layout="responsive"
+      width={media.width}
+      height={media.height}
+      objectFit="contain"
+      src={url}
+      alt={alternativeText || ""}
+    />
+  )
+}
 
 Image.propTypes = {
   media: mediaPropTypes.isRequired,
   className: PropTypes.string,
-};
+}
 
-export default Image;
+export default Image
