@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-import classNames from "classnames"
-import Image from "../elements/image"
-import Video from "../elements/video"
-import CustomLink from "../elements/custom-link"
-=======
 import classNames from 'classnames'
 import Image from '../elements/image'
 import Video from '../elements/video'
 import CustomLink from '../elements/custom-link'
->>>>>>> 04f09ee (add eslint and prettier config)
 
 const FeatureRowsGroup = ({ data }) => {
   return (

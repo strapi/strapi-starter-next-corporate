@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 import classNames from "classnames"
 import { useState } from "react"
 import Image from "../elements/image"
 import CustomLink from "../elements/custom-link"
-=======
-import classNames from 'classnames'
-import { useState } from 'react'
-import Image from '../elements/image'
-import CustomLink from '../elements/custom-link'
->>>>>>> 04f09ee (add eslint and prettier config)
 
 const TestimonialsGroup = ({ data }) => {
   // Only show one testimonial at a time
@@ -45,7 +38,7 @@ const TestimonialsGroup = ({ data }) => {
           <CustomLink
             link={{
               url: selectedTestimonial.link,
-              text: '',
+              text: "",
               newTab: false,
               id: 0,
             }}
