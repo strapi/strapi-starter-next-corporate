@@ -1,4 +1,4 @@
-import Video from '../elements/video'
+import Video from "../elements/video"
 
 const LargeVideo = ({ data }) => {
   return (

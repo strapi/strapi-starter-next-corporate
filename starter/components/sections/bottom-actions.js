@@ -1,5 +1,5 @@
-import ButtonLink from '@/components/elements/button-link'
-import { getButtonAppearance } from 'utils/button'
+import ButtonLink from "@/components/elements/button-link"
+import { getButtonAppearance } from "utils/button"
 
 const BottomActions = ({ data }) => {
   return (
@@ -10,7 +10,7 @@ const BottomActions = ({ data }) => {
         {data.buttons.map((button) => (
           <ButtonLink
             button={button}
-            appearance={getButtonAppearance(button.type, 'dark')}
+            appearance={getButtonAppearance(button.type, "dark")}
             key={button.id}
           />
         ))}

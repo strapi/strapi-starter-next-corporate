@@ -1,11 +1,11 @@
-import { getPageData } from 'utils/api'
-import { parseCookies } from 'utils/parse-cookies'
+import { getPageData } from "utils/api"
+import { parseCookies } from "utils/parse-cookies"
 
 const preview = async (req, res) => {
   // Check the secret and next parameters
   // This secret should only be known to this API route and the CMS
-  if (req.query.secret !== (process.env.PREVIEW_SECRET || 'secret-token')) {
-    return res.status(401).json({ message: 'Invalid token' })
+  if (req.query.secret !== (process.env.PREVIEW_SECRET || "secret-token")) {
+    return res.status(401).json({ message: "Invalid token" })
   }
 
   const cookies = parseCookies(req)
@@ -19,7 +19,7 @@ const preview = async (req, res) => {
 
   // If the slug doesn't exist prevent preview mode from being enabled
   if (!pageData) {
-    return res.status(401).json({ message: 'Invalid slug' })
+    return res.status(401).json({ message: "Invalid slug" })
   }
 
   // Enable Preview Mode by setting the cookies

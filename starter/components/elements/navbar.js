@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import PropTypes from 'prop-types'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { useState } from "react"
+import PropTypes from "prop-types"
+import Link from "next/link"
+import { useRouter } from "next/router"
 
-import { getButtonAppearance } from 'utils/button'
-import { mediaPropTypes, linkPropTypes, buttonLinkPropTypes } from 'utils/types'
-import { MdMenu } from 'react-icons/md'
-import MobileNavMenu from './mobile-nav-menu'
-import ButtonLink from './button-link'
-import Image from './image'
-import CustomLink from './custom-link'
-import LocaleSwitch from '../locale-switch'
+import { getButtonAppearance } from "utils/button"
+import { mediaPropTypes, linkPropTypes, buttonLinkPropTypes } from "utils/types"
+import { MdMenu } from "react-icons/md"
+import MobileNavMenu from "./mobile-nav-menu"
+import ButtonLink from "./button-link"
+import Image from "./image"
+import CustomLink from "./custom-link"
+import LocaleSwitch from "../locale-switch"
 
 const Navbar = ({ navbar, pageContext }) => {
   const router = useRouter()
@@ -60,7 +60,7 @@ const Navbar = ({ navbar, pageContext }) => {
               <div className="hidden md:block">
                 <ButtonLink
                   button={navbar.button}
-                  appearance={getButtonAppearance(navbar.button.type, 'light')}
+                  appearance={getButtonAppearance(navbar.button.type, "light")}
                   compact
                 />
               </div>

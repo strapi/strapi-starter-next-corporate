@@ -57,10 +57,10 @@ const TestimonialsGroup = ({ data }) => {
               onClick={() => setSelectedTestimonialIndex(index)}
               className={classNames(
                 // Common classes
-                'rounded-full h-3 w-3',
+                "rounded-full h-3 w-3",
                 {
-                  'bg-gray-500': index !== selectedTestimonialIndex,
-                  'bg-primary-600': index === selectedTestimonialIndex,
+                  "bg-gray-500": index !== selectedTestimonialIndex,
+                  "bg-primary-600": index === selectedTestimonialIndex,
                 }
               )}
               key={testimonial.id}

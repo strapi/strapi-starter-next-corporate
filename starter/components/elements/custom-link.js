@@ -22,7 +22,7 @@ const CustomLink = ({ link, children }) => {
       </a>
     )
   }
-  
+
   return (
     <a href={link.url} target="_self">
       {children}

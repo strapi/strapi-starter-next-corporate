@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import Navbar from './elements/navbar'
-import Footer from './elements/footer'
-import NotificationBanner from './elements/notification-banner'
+import { useState } from "react"
+import Navbar from "./elements/navbar"
+import Footer from "./elements/footer"
+import NotificationBanner from "./elements/notification-banner"
 
 const Layout = ({ children, global, pageContext }) => {
   const { navbar, footer, notificationBanner } = global

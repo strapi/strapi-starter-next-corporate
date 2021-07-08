@@ -1,4 +1,4 @@
-import Image from '../elements/image'
+import Image from "../elements/image"
 
 const FeatureColumnsGroup = ({ data }) => {
   return (

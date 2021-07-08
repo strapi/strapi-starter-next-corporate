@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types'
-import { getStrapiMedia } from 'utils/media'
-import { mediaPropTypes } from 'utils/types'
+import PropTypes from "prop-types"
+import { getStrapiMedia } from "utils/media"
+import { mediaPropTypes } from "utils/types"
 
 const Video = ({
   media,

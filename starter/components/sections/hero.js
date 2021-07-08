@@ -1,7 +1,7 @@
-import Markdown from 'react-markdown'
-import { getButtonAppearance } from 'utils/button'
-import ButtonLink from '../elements/button-link'
-import Image from '../elements/image'
+import Markdown from "react-markdown"
+import { getButtonAppearance } from "utils/button"
+import ButtonLink from "../elements/button-link"
+import Image from "../elements/image"
 
 const Hero = ({ data }) => {
   return (
@@ -19,7 +19,7 @@ const Hero = ({ data }) => {
           {data.buttons.map((button) => (
             <ButtonLink
               button={button}
-              appearance={getButtonAppearance(button.type, 'light')}
+              appearance={getButtonAppearance(button.type, "light")}
               key={button.id}
             />
           ))}

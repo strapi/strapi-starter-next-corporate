@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types'
-import { linkPropTypes, mediaPropTypes } from 'utils/types'
-import Image from './image'
-import CustomLink from './custom-link'
+import PropTypes from "prop-types"
+import { linkPropTypes, mediaPropTypes } from "utils/types"
+import Image from "./image"
+import CustomLink from "./custom-link"
 
 const Footer = ({ footer }) => {
   return (

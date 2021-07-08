@@ -1,6 +1,12 @@
 {
   "extends": [
-    "prettier",
-    "next"
-  ]
+    "next",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  }
 }
