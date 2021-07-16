@@ -9,9 +9,7 @@ const Footer = ({ footer }) => {
       <div className="container flex flex-col lg:flex-row lg:justify-between">
         <div>
           {footer.logo && (
-            <div className="h-8 w-32">
-              <NextImage media={footer.logo} />
-            </div>
+            <NextImage width="120" height="33" media={footer.logo} />
           )}
         </div>
         <nav className="flex flex-wrap flex-row lg:gap-20 items-start lg:justify-end mb-10">

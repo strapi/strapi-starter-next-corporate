@@ -24,10 +24,14 @@ const TestimonialsGroup = ({ data }) => {
         </div>
         <div className="px-4 py-4 sm:px-12 sm:pt-12 sm:pb-4 flex flex-col justify-between">
           <div>
-            <div className="h-8 w-32">
-              <NextImage media={selectedTestimonial.logo} />
-            </div>
-            <p className="italic mb-6">&quot{selectedTestimonial.text}&quot</p>
+            <NextImage
+              width="120"
+              height="33"
+              media={selectedTestimonial.logo}
+            />
+            <p className="italic mb-6">
+              &quot;{selectedTestimonial.text}&quot;
+            </p>
             <p className="font-bold text-base sm:text-sm">
               {selectedTestimonial.authorName}
             </p>
@@ -71,9 +75,7 @@ const TestimonialsGroup = ({ data }) => {
       {/* Logos list */}
       <div className="flex flex-row flex-wrap items-center gap-6 sm:gap-20 justify-center mt-10 px-6 sm:px-0 ">
         {data.logos.map((logo) => (
-          <div key={logo.id} className="h-8 w-32">
-            <NextImage media={logo.logo} />
-          </div>
+          <NextImage key={logo.id} width="120" height="33" media={logo.logo} />
         ))}
       </div>
     </section>
