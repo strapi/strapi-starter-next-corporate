@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react"
 
 const Loader = () => {
   return (
@@ -23,7 +23,7 @@ const Loader = () => {
         </g>
       </g>
     </svg>
-  );
-};
+  )
+}
 
-export default Loader;
+export default Loader

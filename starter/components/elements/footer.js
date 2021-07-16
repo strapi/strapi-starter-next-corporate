@@ -1,6 +1,6 @@
-import Image from "./image"
 import PropTypes from "prop-types"
 import { linkPropTypes, mediaPropTypes } from "utils/types"
+import NextImage from "./image"
 import CustomLink from "./custom-link"
 
 const Footer = ({ footer }) => {
@@ -9,9 +9,7 @@ const Footer = ({ footer }) => {
       <div className="container flex flex-col lg:flex-row lg:justify-between">
         <div>
           {footer.logo && (
-            <div className="h-8 w-32">
-              <Image media={footer.logo} />
-            </div>
+            <NextImage width="120" height="33" media={footer.logo} />
           )}
         </div>
         <nav className="flex flex-wrap flex-row lg:gap-20 items-start lg:justify-end mb-10">

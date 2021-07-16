@@ -1,4 +1,4 @@
-import Video from "../elements/video";
+import Video from "../elements/video"
 
 const LargeVideo = ({ data }) => {
   return (
@@ -14,7 +14,7 @@ const LargeVideo = ({ data }) => {
         />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default LargeVideo;
+export default LargeVideo

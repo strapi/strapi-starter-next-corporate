@@ -1,4 +1,4 @@
-import { fetchAPI } from "./api"
+import { fetchAPI } from './api'
 
 export async function getLocalizedPage(targetLocale, pageContext) {
   const localization = pageContext.localizations.find(
@@ -20,36 +20,13 @@ export function localizePath(page) {
   return `/${locale}/${slug}`
 }
 
-export async function listLocalizedPaths(pageContext) {
-  const currentPage = {
-    locale: pageContext.locale,
-    href: localizePath(pageContext),
-  }
+export function getLocalizedPaths(page) {
+  const paths = page.locales.map((locale) => {
+    return {
+      locale: locale,
+      href: localizePath({ ...page, locale }),
+    }
+  })
 
-  const paths = await Promise.all(
-    pageContext.localizations.map(async (localization) => {
-      const localePage = await fetchAPI(`/pages/${localization.id}`)
-      const page = { ...pageContext, ...localePage }
-      return {
-        locale: page.locale,
-        href: localizePath(page),
-      }
-    })
-  )
-
-  const localizedPaths = [currentPage, ...paths]
-
-  // Check the default locale is first
-  const defaultLocaleIndex = localizedPaths.findIndex(
-    (path) => path.locale === pageContext.defaultLocale
-  )
-
-  if (defaultLocaleIndex !== 0) {
-    // Grab the default locale by mutating the localizedPaths array
-    const [defaultLoc] = localizedPaths.splice(defaultLocaleIndex, 1)
-    // Add it to the front
-    localizedPaths.unshift(defaultLoc)
-  }
-
-  return localizedPaths
+  return paths
 }

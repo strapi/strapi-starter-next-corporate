@@ -25,7 +25,7 @@ const MyApp = ({ Component, pageProps }) => {
       {/* Global site metadata */}
       <DefaultSeo
         titleTemplate={`%s | ${global.metaTitleSuffix}`}
-        title={"Page"}
+        title="Page"
         description={metadata.metaDescription}
         openGraph={{
           images: Object.values(metadata.shareImage.formats).map((image) => {
@@ -54,9 +54,8 @@ const MyApp = ({ Component, pageProps }) => {
 MyApp.getInitialProps = async (appContext) => {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(appContext)
-
   const globalLocale = await getGlobalData(appContext.router.locale)
-  
+
   return {
     ...appProps,
     pageProps: {

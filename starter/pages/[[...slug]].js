@@ -4,6 +4,7 @@ import Sections from "@/components/sections"
 import Seo from "@/components/elements/seo"
 import { useRouter } from "next/router"
 import Layout from "@/components/layout"
+import { getLocalizedPaths } from "utils/localize"
 
 // The file is called [[...slug]].js because we're using Next's
 // optional catch all routes feature. See the related docs:
@@ -59,7 +60,6 @@ export async function getStaticProps(context) {
   const { params, locale, locales, defaultLocale, preview = null } = context
 
   const globalLocale = await getGlobalData(locale)
-
   // Fetch pages. Include drafts if preview mode is on
   const pageData = await getPageData(
     { slug: !params.slug ? [""] : params.slug },
@@ -73,7 +73,17 @@ export async function getStaticProps(context) {
   }
 
   // We have the required page data, pass it to the page component
-  const { contentSections, metadata, localizations } = pageData
+  const { contentSections, metadata, localizations, slug } = pageData
+
+  const pageContext = {
+    locale: pageData.locale,
+    locales,
+    defaultLocale,
+    slug,
+    localizations,
+  }
+
+  const localizedPaths = getLocalizedPaths(pageContext)
 
   return {
     props: {
@@ -82,11 +92,8 @@ export async function getStaticProps(context) {
       metadata,
       global: globalLocale,
       pageContext: {
-        slug: pageData.slug,
-        locale: pageData.locale,
-        locales,
-        defaultLocale,
-        localizations,
+        ...pageContext,
+        localizedPaths,
       },
     },
   }

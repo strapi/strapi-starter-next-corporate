@@ -1,5 +1,5 @@
-import ButtonLink from "@/components/elements/button-link";
-import { getButtonAppearance } from "utils/button";
+import ButtonLink from "@/components/elements/button-link"
+import { getButtonAppearance } from "utils/button"
 
 const BottomActions = ({ data }) => {
   return (
@@ -16,7 +16,7 @@ const BottomActions = ({ data }) => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default BottomActions;
+export default BottomActions

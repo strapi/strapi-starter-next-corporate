@@ -3,16 +3,14 @@ import PropTypes from "prop-types"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-import MobileNavMenu from "./mobile-nav-menu"
-import ButtonLink from "./button-link"
-import Image from "./image"
-import CustomLink from "./custom-link"
-import LocaleSwitch from "../locale-switch"
-
 import { getButtonAppearance } from "utils/button"
 import { mediaPropTypes, linkPropTypes, buttonLinkPropTypes } from "utils/types"
-
 import { MdMenu } from "react-icons/md"
+import MobileNavMenu from "./mobile-nav-menu"
+import ButtonLink from "./button-link"
+import NextImage from "./image"
+import CustomLink from "./custom-link"
+import LocaleSwitch from "../locale-switch"
 
 const Navbar = ({ navbar, pageContext }) => {
   const router = useRouter()
@@ -27,7 +25,7 @@ const Navbar = ({ navbar, pageContext }) => {
           <div className="flex flex-row items-center">
             <Link href="/">
               <a className="h-8 w-32">
-                <Image media={navbar.logo} />
+                <NextImage width="120" height="33" media={navbar.logo} />
               </a>
             </Link>
             {/* List of links on desktop */}
@@ -45,7 +43,7 @@ const Navbar = ({ navbar, pageContext }) => {
           </div>
           <div className="flex">
             {/* Locale Switch Mobile */}
-            {pageContext.localizations && (
+            {pageContext.localizedPaths && (
               <div className="md:hidden">
                 <LocaleSwitch pageContext={pageContext} />
               </div>
@@ -68,7 +66,7 @@ const Navbar = ({ navbar, pageContext }) => {
               </div>
             )}
             {/* Locale Switch Desktop */}
-            {pageContext.localizations && (
+            {pageContext.localizedPaths && (
               <div className="hidden md:block">
                 <LocaleSwitch pageContext={pageContext} />
               </div>

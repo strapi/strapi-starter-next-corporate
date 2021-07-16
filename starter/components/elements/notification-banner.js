@@ -1,6 +1,6 @@
-import Markdown from "react-markdown";
-import classNames from "classnames";
-import { MdClose } from "react-icons/md";
+import Markdown from "react-markdown"
+import classNames from "classnames"
+import { MdClose } from "react-icons/md"
 
 const NotificationBanner = ({ data: { text, type }, closeSelf }) => {
   return (
@@ -25,7 +25,7 @@ const NotificationBanner = ({ data: { text, type }, closeSelf }) => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NotificationBanner;
+export default NotificationBanner

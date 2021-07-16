@@ -1,6 +1,6 @@
 import classNames from "classnames"
 import { useState } from "react"
-import Image from "../elements/image"
+import NextImage from "../elements/image"
 import CustomLink from "../elements/custom-link"
 
 const TestimonialsGroup = ({ data }) => {
@@ -20,14 +20,18 @@ const TestimonialsGroup = ({ data }) => {
       {/* Current testimonial card */}
       <div className="max-w-5xl w-8/12 sm:w-8/12 bg-white shadow-md sm:shadow-xl mx-auto flex flex-col sm:flex-row mt-10 text-left">
         <div className="w-full md:w-4/12 flex-shrink-0">
-          <Image media={selectedTestimonial.picture} />
+          <NextImage media={selectedTestimonial.picture} />
         </div>
         <div className="px-4 py-4 sm:px-12 sm:pt-12 sm:pb-4 flex flex-col justify-between">
           <div>
-            <div className="h-8 w-32">
-              <Image media={selectedTestimonial.logo} />
-            </div>
-            <p className="italic mb-6">"{selectedTestimonial.text}"</p>
+            <NextImage
+              width="120"
+              height="33"
+              media={selectedTestimonial.logo}
+            />
+            <p className="italic mb-6">
+              &quot;{selectedTestimonial.text}&quot;
+            </p>
             <p className="font-bold text-base sm:text-sm">
               {selectedTestimonial.authorName}
             </p>
@@ -64,16 +68,14 @@ const TestimonialsGroup = ({ data }) => {
                 }
               )}
               key={testimonial.id}
-            ></button>
+            />
           ))}
         </div>
       )}
       {/* Logos list */}
       <div className="flex flex-row flex-wrap items-center gap-6 sm:gap-20 justify-center mt-10 px-6 sm:px-0 ">
         {data.logos.map((logo) => (
-          <div key={logo.id} className="h-8 w-32">
-            <Image media={logo.logo} />
-          </div>
+          <NextImage key={logo.id} width="120" height="33" media={logo.logo} />
         ))}
       </div>
     </section>

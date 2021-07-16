@@ -1,8 +1,8 @@
-import Button from '../elements/button'
-import { useState } from 'react'
-import { fetchAPI } from 'utils/api'
-import * as yup from 'yup'
-import { Formik, Form, Field } from 'formik'
+import { useState } from "react"
+import { fetchAPI } from "utils/api"
+import * as yup from "yup"
+import { Formik, Form, Field } from "formik"
+import Button from "../elements/button"
 
 const LeadForm = ({ data }) => {
   const [loading, setLoading] = useState(false)
@@ -16,15 +16,15 @@ const LeadForm = ({ data }) => {
       <h1 className="text-3xl mb-10 font-bold mb-2">{data.title}</h1>
       <div className="flex flex-col items-center">
         <Formik
-          initialValues={{ email: '' }}
+          initialValues={{ email: "" }}
           validationSchema={LeadSchema}
           onSubmit={async (values, { setSubmitting, setErrors }) => {
             setLoading(true)
 
             try {
               setErrors({ api: null })
-              await fetchAPI('/lead-form-submissions', {
-                method: 'POST',
+              await fetchAPI("/lead-form-submissions", {
+                method: "POST",
                 body: JSON.stringify({
                   email: values.email,
                   location: data.location,
@@ -38,11 +38,7 @@ const LeadForm = ({ data }) => {
             setSubmitting(false)
           }}
         >
-          {({
-            errors,
-            touched,
-            isSubmitting,
-          }) => (
+          {({ errors, touched, isSubmitting }) => (
             <div>
               <Form className="flex flex-col md:flex-row gap-4">
                 <Field

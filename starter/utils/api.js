@@ -1,6 +1,6 @@
 export function getStrapiURL(path) {
   return `${
-    process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
+    process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'
   }${path}`
 }
 
@@ -8,7 +8,7 @@ export function getStrapiURL(path) {
 export async function fetchAPI(path, options = {}) {
   const defaultOptions = {
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   }
   const mergedOptions = {
@@ -33,11 +33,11 @@ export async function fetchAPI(path, options = {}) {
  * @param {boolean} preview router isPreview value
  */
 export async function getPageData(params, locale, preview) {
-  const slug = params.slug.join("/")
+  const slug = params.slug.join('/')
   // Find the pages that match this slug
   const pagesData = await fetchAPI(
     `/pages?slug=${slug}&_locale=${locale}&status=published${
-      preview ? "&status=draft" : ""
+      preview ? '&status=draft' : ''
     }`
   )
 
