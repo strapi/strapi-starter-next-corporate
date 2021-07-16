@@ -8,7 +8,7 @@ import { mediaPropTypes, linkPropTypes, buttonLinkPropTypes } from "utils/types"
 import { MdMenu } from "react-icons/md"
 import MobileNavMenu from "./mobile-nav-menu"
 import ButtonLink from "./button-link"
-import Image from "./image"
+import NextImage from "./image"
 import CustomLink from "./custom-link"
 import LocaleSwitch from "../locale-switch"
 
@@ -25,7 +25,7 @@ const Navbar = ({ navbar, pageContext }) => {
           <div className="flex flex-row items-center">
             <Link href="/">
               <a className="h-8 w-32">
-                <Image media={navbar.logo} />
+                <NextImage media={navbar.logo} />
               </a>
             </Link>
             {/* List of links on desktop */}

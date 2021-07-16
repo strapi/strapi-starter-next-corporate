@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 import { linkPropTypes, mediaPropTypes } from "utils/types"
-import Image from "./image"
+import NextImage from "./image"
 import CustomLink from "./custom-link"
 
 const Footer = ({ footer }) => {
@@ -10,7 +10,7 @@ const Footer = ({ footer }) => {
         <div>
           {footer.logo && (
             <div className="h-8 w-32">
-              <Image media={footer.logo} />
+              <NextImage media={footer.logo} />
             </div>
           )}
         </div>

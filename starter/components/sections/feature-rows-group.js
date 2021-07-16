@@ -1,5 +1,5 @@
 import classNames from "classnames"
-import Image from "../elements/image"
+import NextImage from "../elements/image"
 import Video from "../elements/video"
 import CustomLink from "../elements/custom-link"
 
@@ -33,7 +33,7 @@ const FeatureRowsGroup = ({ data }) => {
             {/* Images */}
             {feature.media.mime.startsWith("image") && (
               <div className="w-full h-auto">
-                <Image media={feature.media} />
+                <NextImage media={feature.media} />
               </div>
             )}
             {/* Videos */}

@@ -4,7 +4,7 @@ import { mediaPropTypes, linkPropTypes, buttonLinkPropTypes } from "utils/types"
 import { useLockBodyScroll } from "utils/hooks"
 import { getButtonAppearance } from "utils/button"
 import ButtonLink from "./button-link"
-import Image from "./image"
+import NextImage from "./image"
 import CustomLink from "./custom-link"
 
 const MobileNavMenu = ({ navbar, closeSelf }) => {
@@ -17,7 +17,10 @@ const MobileNavMenu = ({ navbar, closeSelf }) => {
         {/* Top section */}
         <div className="flex flex-row justify-between py-2 items-center">
           {/* Company logo */}
-          <Image media={navbar.logo} className="h-8 w-auto object-contain" />
+          <NextImage
+            media={navbar.logo}
+            className="h-8 w-auto object-contain"
+          />
           {/* Close button */}
           <button onClick={closeSelf} className="py-1 px-1">
             <MdClose className="h-8 w-auto" />
