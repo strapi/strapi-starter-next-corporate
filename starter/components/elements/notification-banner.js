@@ -18,7 +18,7 @@ const NotificationBanner = ({ data: { text, type }, closeSelf }) => {
     >
       <div className="container flex flex-row justify-between items-center ">
         <div className="rich-text-banner flex-1">
-          <Markdown source={text} />
+          <Markdown>{text}</Markdown>
         </div>
         <button onClick={closeSelf} className="px-1 py-1 flex-shrink-0">
           <MdClose className="h-6 w-auto" color="#fff" />
