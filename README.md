@@ -34,11 +34,7 @@ Check out all of our starters [here](https://strapi.io/starters)
 Use our `create-strapi-starter` CLI to create your project.
 
 ```sh
-# Using Yarn
-yarn create strapi-starter my-site next-corporate
-
-# Or using NPM
-npx create-strapi-starter my-site next-corporate
+npx create-strapi-starter@3 my-site next-corporate
 ```
 
 The CLI will create a monorepo, install dependencies, and run your project automatically.
