@@ -1,3 +1,10 @@
+**:no_entry: DEPRECATED**
+
+This repository is no longer maintained and only works for Strapi v3. You can find the latest Strapi v4 version of this starter on the [starters-and-templates monorepo](https://github.com/strapi/starters-and-templates/tree/main/packages/starters/next-corporate).
+
+---
+
+
 # Strapi Starter Next Corporate Site
 
 Next starter for creating a corporate site with Strapi.
@@ -27,11 +34,7 @@ Check out all of our starters [here](https://strapi.io/starters)
 Use our `create-strapi-starter` CLI to create your project.
 
 ```sh
-# Using Yarn
-yarn create strapi-starter my-site next-corporate
-
-# Or using NPM
-npx create-strapi-starter my-site next-corporate
+npx create-strapi-starter@3 my-site next-corporate
 ```
 
 The CLI will create a monorepo, install dependencies, and run your project automatically.
