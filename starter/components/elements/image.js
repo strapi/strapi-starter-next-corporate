@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { mediaPropTypes } from "utils/types"
 
 const NextImage = ({ media, ...props }) => {
-  const { url, alternativeText } = media
+  const { url, alternativeText = "" } = media
 
   const loader = ({ src }) => {
     return getStrapiMedia(src)
@@ -13,7 +13,7 @@ const NextImage = ({ media, ...props }) => {
   // The image has a fixed width and height
   if (props.width && props.height) {
     return (
-      <Image loader={loader} src={url} alt={alternativeText || ""} {...props} />
+      <Image loader={loader} src={url} alt={alternativeText} {...props} />
     )
   }
 
@@ -26,7 +26,7 @@ const NextImage = ({ media, ...props }) => {
       height={media.height}
       objectFit="contain"
       src={url}
-      alt={alternativeText || ""}
+      alt={alternativeText}
     />
   )
 }
