@@ -70,7 +70,7 @@ const LocaleSwitch = ({ pageContext }) => {
         <MdExpandMore className="ml-1 text-primary-600" />
       </button>
       <div
-        className={`w-full bg-white p-1 mt-1 shadow-lg rounded-md ${
+        className={`w-full z-10 bg-white p-1 mt-1 shadow-lg rounded-md ${
           showing ? "absolute" : "hidden"
         }`}
       >
